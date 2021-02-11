@@ -99,7 +99,34 @@ ul.navbar-nav {
       font-family:'Open Sans', sans-serif;
   }
 
+  .code.code--small.code--left.aos-init.aos-animate.experience {
+    width: 100%;
+    clear: both;
+    text-align: center;
+    height: 200px;
+    background: #FFF;
+    border-radius: 2px;
+    margin: 4vh 0;
+    padding-top:0px;
+    padding: 10px;
+}
 
+.experience code.html.hljs.xml {
+    background-color: transparent;
+}
+
+.section_title hr {
+    width: 30%;
+    margin: 10px auto;
+    height: 1px;
+    color: black !important;
+}
+
+.section_title {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    color: rgb(33, 37, 41);
+}
 
 
 
