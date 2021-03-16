@@ -88,14 +88,13 @@ div#banner {
 }
 
 .about-me {
-  height: 300px;
+  margin-top: 15px;
   margin-top: 15px;
 }
 
 .about-me p {
-  width: 50%;
   padding-top: 30px;
-  font-size: 17px;
+  font-size: 20px;
   letter-spacing: 1px;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
@@ -544,5 +543,19 @@ a {
   -webkit-transform: scaleX(200);
   transform: scaleX(200);
   opacity: 1;
+}
+
+.container--about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container--about .portrait-photo {
+  margin-top: 15px;
+}
+
+.container--about .portrait-photo img {
+  width: 65%;
 }
 /*# sourceMappingURL=style.css.map */

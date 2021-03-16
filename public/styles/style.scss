@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap');
+@import './mixins';
 
 body {
     height: 1500px;
@@ -84,15 +85,13 @@ ul.navbar-nav {
   }
 
   .about-me {
-      height: 300px;
-    
-      
+      @include aboutMe;
       margin-top: 15px;
   }
   .about-me p {
-    width: 50%;
+ 
     padding-top: 30px;
-    font-size: 17px;
+    font-size: 20px;
     letter-spacing: 1px;
       text-align: center;
       
@@ -473,3 +472,20 @@ ul.navbar-nav {
                 transform: scaleX(200);
         opacity: 1; }
   
+
+
+       
+
+
+
+.container--about {
+    display: flex ;
+    .portrait-photo {
+        @include aboutMe;
+    img{
+        width: 65%;
+        }
+    }
+    
+    
+}
