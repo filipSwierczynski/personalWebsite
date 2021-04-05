@@ -57,7 +57,7 @@ ul.navbar-nav {
     background-color: azure;
     height: 100%;
     
-    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2) ), url(/public/assets/banner.jpg);
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4) ), url(/public/assets/banner.jpg);
     filter: blur(8px);
     -webkit-filter: blur(3px);
     
@@ -393,7 +393,11 @@ ul.navbar-nav {
     margin: 0 auto;
     max-width: 90%;
     -webkit-transform: translateZ(1000px);
-            transform: translateZ(1000px); }
+            transform: translateZ(1000px); 
+      &--experience {
+        width: 100vw;
+      }      
+    }
   
   .code {
     width: 40%;
