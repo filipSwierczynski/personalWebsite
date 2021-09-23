@@ -87,16 +87,16 @@ ul.navbar-nav {
   .about-me {
       @include aboutMe;
       margin-top: 15px;
+      p {
+        padding-top: 30px;
+        font-size: 20px;
+        letter-spacing: 1px;
+          text-align: left;
+          line-height: 1.5;
+          font-family:'Open Sans', sans-serif;
+      }
   }
-  .about-me p {
- 
-    padding-top: 30px;
-    font-size: 20px;
-    letter-spacing: 1px;
-      text-align: center;
-      
-      font-family:'Open Sans', sans-serif;
-  }
+   
 
   .code.code--small.code--left.aos-init.aos-animate.experience {
     width: 100%;
@@ -389,15 +389,24 @@ ul.navbar-nav {
     clear: both; }
   
   .container {
-    width: 970px;
-    margin: 0 auto;
-    max-width: 90%;
-    -webkit-transform: translateZ(1000px);
-            transform: translateZ(1000px); 
+    // width: 970px;
+    // margin: 0 auto;
+    // max-width: 90%;
+    // -webkit-transform: translateZ(1000px);
+    //         transform: translateZ(1000px); 
       &--experience {
         width: 100vw;
+      }
+      &_inner {
+        max-width:1320px;
+        margin:auto;
       }      
+      &_outter {
+        max-width: 100%;
+      }
     }
+
+    
   
   .code {
     width: 40%;
@@ -483,7 +492,8 @@ ul.navbar-nav {
 
 
 .container--about {
-    display: flex ;
+    display: flex;
+    margin-top:110px;
     .portrait-photo {
         @include aboutMe;
     img{

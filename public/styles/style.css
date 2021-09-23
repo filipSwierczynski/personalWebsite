@@ -96,7 +96,8 @@ div#banner {
   padding-top: 30px;
   font-size: 20px;
   letter-spacing: 1px;
-  text-align: center;
+  text-align: left;
+  line-height: 1.5;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -425,16 +426,17 @@ a {
   clear: both;
 }
 
-.container {
-  width: 970px;
-  margin: 0 auto;
-  max-width: 90%;
-  -webkit-transform: translateZ(1000px);
-  transform: translateZ(1000px);
-}
-
 .container--experience {
   width: 100vw;
+}
+
+.container_inner {
+  max-width: 1320px;
+  margin: auto;
+}
+
+.container_outter {
+  max-width: 100%;
 }
 
 .code {
@@ -553,6 +555,7 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 110px;
 }
 
 .container--about .portrait-photo {
