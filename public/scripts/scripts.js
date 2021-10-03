@@ -1,3 +1,4 @@
+
 // intro section 
 // Wrap every letter in a span
 var textWrapper = document.querySelector('.ml1 .letters');
@@ -24,7 +25,7 @@ anime.timeline({loop: false})
     opacity: [0,1],
     translateZ: 0,
     easing: "easeOutExpo",
-    duration: 200,
+    duration: 1000,
     delay: (el, i) => 90 * (i+1)
   });
 
