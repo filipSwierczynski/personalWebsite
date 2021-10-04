@@ -654,4 +654,12 @@ a {
 #navbarNav .nav-item:hover .hover.hover-3:before, #navbarNav .nav-item:hover .hover.hover-3:after, #navbarNav .nav-item:hover .hover.hover-4:before, #navbarNav .nav-item:hover .hover.hover-4:after {
   width: 50%;
 }
+
+.tech_slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
 /*# sourceMappingURL=style.css.map */
