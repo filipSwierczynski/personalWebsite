@@ -95,12 +95,20 @@ nav{
   }
   &_item {
     height: 33vh;
-    background-color: #033;
+    background-image: url('../assets/project_background.jpg');
     display:flex;
       flex-direction: column;
       flex-basis: 100%;
       flex:1;
       border:2px solid white;
+      width: 100%;
+      background-size: cover;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      -webkit-transition: all .5s;
+      -moz-transition: all .5s;
+      -o-transition: all .5s;
+      transition: all .5s;
   }
   &_row {
     display: flex;
