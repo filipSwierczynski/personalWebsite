@@ -117,7 +117,8 @@ nav li a:hover {
   height: 100%;
 }
 
-.projects_item {
+.projects_item, .projects .parent {
+  position: relative;
   height: 33vh;
   background-image: url("../assets/project_background.jpg");
   display: -webkit-box;
@@ -139,6 +140,44 @@ nav li a:hover {
   background-repeat: no-repeat;
   -webkit-transition: all .5s;
   transition: all .5s;
+}
+
+.projects_item:hover, .projects .parent:hover {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  display: block;
+}
+
+.projects_item:focus .child:before, .projects .parent:focus .child:before {
+  display: block;
+}
+
+.projects_item .project_inner:before, .projects .parent .project_inner:before {
+  content: "";
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(52, 73, 94, 0.75);
+}
+
+.projects_item .project_inner .project_desc a, .projects .parent .project_inner .project_desc a {
+  display: none;
+  font-size: 35px;
+  color: #ffffff !important;
+  font-family: sans-serif;
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 50px;
+  cursor: pointer;
+  /*text-decoration: none;*/
 }
 
 .projects_row {
