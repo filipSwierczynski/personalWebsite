@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;600&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 <body>
    
@@ -101,9 +103,11 @@
       </div>
   </div>
 
-  <div class="about_section" id="about">
+  <div data-aos="fade-up"
+  data-aos-duration="3000" data-aos-anchor-placement="center-bottom" class="about_section" id="about">
     <div class="about_title">
       <h2>About Me</h2>
+      </div>
       <div class="about_desc">
         <div class="about_desc__bio">
           <p>My name is Filip, I'm a web developer specialized in front end technologies. </p>
@@ -125,9 +129,19 @@
         </div>
         
       </div>
-    </div>
+    
     
   </div>
+
+  <footer>
+    <div class="footer_content">
+      Email me: <button type="button" value="filipsdev@gmail.com" id="email_btn">filipsdev@gmail.com</button>
+    </div>
+  </footer>
+  
 </body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 <script src="/public/scripts/scripts.js"></script>
+
 </html>

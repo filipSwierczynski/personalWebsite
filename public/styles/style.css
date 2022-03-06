@@ -157,6 +157,46 @@ nav li a:hover {
 }
 
 .about_section {
-  margin: 50px 20%;
+  margin: 110px 20%;
+}
+
+.about_title h2 {
+  display: inline-block;
+  border-bottom: 1px solid white;
+  width: 150px;
+  padding-bottom: 4px;
+}
+
+.about_desc {
+  margin-left: 10px;
+}
+
+.about_desc__skills ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  list-style-type: none;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-left: 0px;
+}
+
+.about_desc__skills ul li {
+  padding: 5px 0px;
+  width: 25%;
+}
+
+.about_desc__bio a {
+  color: white;
+}
+
+footer {
+  background-color: #fff;
+  height: 85px;
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */
