@@ -1,159 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-        <link rel="stylesheet" href="/public/styles/style.css">
-        
     <title>Filip Swierczynski</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/public/styles/style.css">
+    <link rel="stylesheet" href="/public/styles/projects.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;600&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 <body>
-  <div class="container_outter  background-nav">
-    <div class="container_inner nav-container">
-      <nav class="navbar navbar-light  navbar-expand-lg ">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="/public/assets/logo.png" alt="" class="d-inline-block align-top">
-            <!-- <span class="nav-title"></span>  -->
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav nav justify-content-end">
-              <li class="nav-item active">
-                <a class="nav-link hover hover-1" href="#">About</a>
-              </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="#">Experience</a>
-              </li> -->
-              <li class="nav-item">
-                <a class="nav-link hover hover-1" href="#">Projects</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link hover hover-1" href="#">Contact</a>
-              </li>
-            </ul>
-          
-      </nav>
-     </div>
+   
+<nav id="top">
+    <ul>
+      <li><a href="#top">First</a></li>
+      <li><a href="#projects">Second</a></li>
+      <li><a href="#about">Third</a></li>
+    </ul>
+  </nav>
 
+  <div class="welcome_section">
+      <div class="inner_content flex">
+          <div class="welcome_section-name column">
+              <span class="name">
+                  Hey, I'm Filip!
+              </span>
+              <span class="role">
+                <span>Web Developer</span>  
+                
+              </span>
+          </div>
+          <div class="welcome_section-photo column">
+              <img src="./assets/stonks.png"/>
+          </div>
+      </div>
+  </div>
+  <div id="projects" class="projects_section">
+      <div class="inner_content">
+          <div class="projects_row ">
+              <div class="projects_item">
+                  <div class="projects_inner">
+                    <div class="projects_desc">
+                      <div class="project_title">
+                        Test Project
+                      </div>
+                      <div class="project_details">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus aperiam eum 
+                      </div>
+                      <div class="project_links">
+
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="projects_item">
+                <div class="projects_inner">
+                  <div class="project_desc">
+
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="projects_row ">
+            <div class="projects_item">
+                <div class="projects_inner">
+                  <div class="project_desc">
+
+                  </div>
+                </div>
+            </div>
+            <div class="projects_item">
+              <div class="projects_inner">
+                <div class="project_desc">
+
+                </div>
+              </div>
+          </div>
+        </div>
+
+        <div class="projects_row ">
+          <div class="projects_item">
+              <div class="projects_inner">
+                <div class="projects_desc">
+
+                </div>
+              </div>
+          </div>
+          <div class="projects_item">
+            <div class="projects_inner">
+              <div class="projects_desc">
+
+              </div>
+            </div>
+        </div>
+      </div>
+      </div>
   </div>
 
-     
+  <div data-aos="fade-up"
+  data-aos-duration="3000" data-aos-anchor-placement="center-bottom" class="about_section" id="about">
+    <div class="about_title">
+      <h2>About Me</h2>
+      </div>
+      <div class="about_desc">
+        <div class="about_desc__bio">
+          <p>My name is Filip, I'm a web developer specialized in front end technologies. </p>
+          <p>Currently working at <a href="q4inc.com">Q4</a>, building corporate and investor relations sites.</p>
+        </div>
+       
+        <div class="about_desc__skills">
+          <h3>Skills</h3>
+          <ul>
+            <li>JavaScript</li>
+            <li>ReactJS</li>
+            <li>NodeJS</li>
+            <li>Python</li>
+            <li>Responsive Web Design</li>
+            <li>SASS</li>
+            <li>SQL</li>
   
- 
-      
-
-    <div id="hero">
-        <div id="banner"></div>
-    <div class="banner-text">
-        <h1 class="ml1">
-            <span class="text-wrapper">
-              <span class="line line1"></span>
-              <span class="letters">Hey, <span><br>
-                  
-              <span class="line line2"></span>
-            </span>
-          </h1>
-          <h1 class="ml1">
-            <span class="text-wrapper">
-              <span class="line line1"></span>
-              
-                  <span class="letters1">I'm Filip Swierczynski</span>
-              <span class="line line2"></span>
-            </span>
-          </h1>
-    </div>
-    </div>
-
-    <div class="container_inner container--about">
-      
+          </ul>
+        </div>
         
-        <div class="about-me col-lg-12 col-md-12">
-          <div class="code code--small code--left aos-init aos-animate experience" data-aos="fade-up">
-            <pre><code class="html hljs xml"><span class="section_title"><h2>About Me<hr></h2></span>
-              
-            </code></pre>
-        </div>
-          <p>I'm a web developer, currently working at <a href="https://www.q4inc.com">Q4</a> in Hamilton, Ontario.<br>
-            Prior to starting my career as a software developer I've been studying at <a href="https://www.mohawkcollege.ca/">Mohawk College</a> & working retail jobs at Apple and BestBuy.
-          </p>
       </div>
-      
-    </div>
     
-    <div class="container_inner container--experience">
-      <div class="experience-content col-lg-12">
-        <div class="code code--small code--left aos-init aos-animate experience" data-aos="fade-up">
-          <pre><code class="html hljs xml"><span class="section_title"><h2>Experience<hr></h2></span>
-            
-          </code></pre>
-      </div>
-      <p>My day to day work involves using JavaScript, SASS & utilizing CMS to build Investor Relation sites.<br/>
-      I work with Figma designs and build custom websites, some of the the sites I worked on include: <a href="https://investors.lightspeedhq.com/English/overview/about-us/default.aspx">Lightspeed</a>
-    </p>
-      </div>
+    
+  </div>
+
+  <footer>
+    <div class="footer_content">
+      Email me: <button type="button" value="filipsdev@gmail.com" id="email_btn">filipsdev@gmail.com</button>
     </div>
-   
-    <div class="container_inner container--skills">
-      <div class="skills-content col-lg-12">
-        <div class="code code--small code--left aos-init aos-animate experience" data-aos="fade-up">
-          <pre><code class="html hljs xml"><span class="section_title"><h2>Skills<hr></h2></span>
-            
-          </code></pre>
-      </div>
-
-      <p>Besides technologies I use daily I have knowledge of other programming languages I've used in school & personal projects. </p>
-      
-      <div class="tech_slider">
-        <div class="tech_slider_item">
-          <img src="assets/icons/csharp.svg" title='C#' alt="C# logo">
-        </div>
-        <div class="tech_slider_item">
-          <img src="assets/icons/java.svg">
-        </div>
-        <div class="tech_slider_item">
-          <img src="assets/icons/nodejs.svg">
-        </div>
-        <div class="tech_slider_item">
-          <img src="assets/icons/react.svg">
-        </div>
-        <div class="tech_slider_item">
-          <img src="assets/icons/sass.svg">
-        </div>   
-        <div class="tech_slider_item">
-          <img src="assets/icons/sql.png">
-        </div>
-        <div class="tech_slider_item">
-          <img src="assets/icons/python.svg">
-        </div>
-        <div class="tech_slider_item">
-          <img src="assets/icons/php.svg">
-        </div>
-      </div>
-      </div>
-    </div>
-
-
-
-
-
-
-
-
+  </footer>
+  
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <script src="/public/scripts/scripts.js"></script>
+
 </html>
