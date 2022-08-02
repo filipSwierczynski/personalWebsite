@@ -1,9 +1,18 @@
+@font-face {
+  font-family: 'Spartan';
+  src: url(../assets/fonts/LeagueSpartan-Bold.otf);
+}
+
 html {
   scroll-behavior: smooth;
+  font-size:22px;
+}
+p,span:not([class]) {
+  font-size: 1rem;
 }
 body {
-  background: #000;
-  color: #fff;
+  background: rgb(255, 243, 230);
+  color: #000;
   margin: 0px;
   font-family: 'Sora', sans-serif;
   
@@ -14,8 +23,10 @@ nav{
   // position:fixed;
   top:0px;
   padding-top: 20px;
+  padding-bottom: 20px;
  font-weight: 600;
  font-size: 1.2em;
+ background-color: #fff;
 
   ul{
     display: flex;
@@ -28,19 +39,19 @@ nav{
     list-style-type: none;
     display: inline;
     a {
-      color: #fff;
+      color: #000;
       text-decoration: none;
      &:hover {
-       border-bottom: 2px solid #fff;
+       border-bottom: 2px solid #000;
      } 
     }
   }
 }
 
 .welcome_section {
-  height: 80vh;
+  height: 93vh;
   // background-color: #122233;
-  margin-top: 20px;
+  ;
   .inner_content {
     flex-direction: row;
     // flex-wrap: wrap;
@@ -48,23 +59,28 @@ nav{
     height: 100%;
     margin:auto;
     .welcome_section-photo {
-
+      flex:1.2 !important;
       img {
         width: 40%;
-        margin: auto 15%;
+        margin: auto;
       }
+      background-color:#0053B3;
     }
     .welcome_section-name {
-      margin:auto auto 25%;
+      
+      
+      
       .name, .role{
-        width: 50%;
-        margin:auto;
+        width: 60%;
+        margin:30px auto;
+        font-family: Spartan;
       }
       .name {
         font-size:56px;
+        margin-top:90px;
       }
       .role {
-        font-size:36px;
+        font-size:42px;
         display: block;
        
         span {
@@ -78,6 +94,7 @@ nav{
       flex-direction: column;
       flex-basis: 100%;
       flex:1;
+      
 
     }
   }
@@ -86,7 +103,7 @@ nav{
 
 .projects {
   &_section{
-    margin-top: 14vh;
+    margin-top: 7vh;
   }
   &_row {
     flex-direction: row;
@@ -95,10 +112,12 @@ nav{
   }
   &_item {
     
-    border:2px solid white;
-    width: 100%;
+    border:1px solid white;
+    flex:1;
     position:relative;
     height: 33vh;
+    
+    overflow: hidden;
     
   }
   &_inner {
@@ -126,6 +145,26 @@ nav{
       }
       
   }
+  &_desc {
+    .project_links {
+      display:flex;
+      justify-content: space-evenly;
+      width: 60%;
+      margin:auto;
+      .live_link {
+        transition: border-bottom 2s ease-in;
+        a {
+          img {
+            height:50px;
+          }
+        }
+        &:hover {
+          border-bottom: 1px solid white;
+          
+        }
+      }
+    }
+  }
   &_row {
     display: flex;
   }
@@ -138,19 +177,20 @@ nav{
 
 .about{
   &_section  {
-    margin:110px 20%;
+    width:1220px;
+    margin:60px auto;
 
   }
   &_title {
     h2 {
       display: inline-block;
     border-bottom: 1px solid white;
-    width: 150px;
+    
     padding-bottom: 4px;
     }
   }
   &_desc {
-    margin-left: 10px;
+   
     &__skills {
       ul {
         display: flex;
@@ -167,7 +207,7 @@ nav{
     }
     &__bio {
       a {
-        color:white;
+        color:#000;
       }
     }
   }
@@ -176,7 +216,84 @@ nav{
 }
 
 footer {
-  background-color: #fff;
+  
   height: 85px;
   width: 100%;
+  .footer_content {
+    width:1220px;
+    margin: auto;
+  }
+}
+
+
+.projects_scroll {
+  text-align: center;
+  margin: auto;
+  position:relative;
+  top:90px;
+  .field {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 300px;
+  }
+  .mouse {
+    margin-top: 20px;
+    width: 30px;
+    height: 60px;
+    border: 3px solid #333;
+    border-radius: 60px;
+    position: relative;
+    &::before {
+      content: '';
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #333;
+      border-radius: 50%;
+      opacity: 1;
+      animation: wheel 2s infinite;
+      -webkit-animation: wheel 2s infinite;
+    }
+  }
+  @keyframes wheel {
+    to {
+      opacity: 0;
+      top: 40px;
+    }
+  }
+  
+  @-webkit-keyframes wheel {
+    to {
+      opacity: 0;
+      top: 40px;
+    }
+  }
+  
+  
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+a:focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
 }

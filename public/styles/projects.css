@@ -8,13 +8,7 @@
 }
 
 /* parent */
-.projects_item {
-    border: 2px solid white;
-    width: 100%;
-    position: relative;
-    height: 33vh;
-    overflow: hidden;
-  }
+
 
   /* child */
   .projects_inner {
@@ -60,7 +54,7 @@
     left: 0;
     bottom: 0;
     right: 0;
-    height: 75%;
+    height: 35%;
     cursor: pointer;
     padding: 40px;
   }
@@ -68,8 +62,10 @@
       font-size: 24px;
   }
   .project_details{
-      margin-top: 10px;
+      margin-left:30px;
+      margin-right:30px;
       font-size:18px;
+      flex:1.13;
   }
   .projects_item:hover .projects_desc, .projects_item:focus .projects_desc {
 display: block;
