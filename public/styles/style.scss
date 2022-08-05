@@ -297,3 +297,53 @@ a:focus {
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
+
+
+
+$spacingsRem: (1,2,3,4,5,6,7,auto);
+$spacingPx: (5,10,15,20,25,30,35,40,45,50,55,60,65,70);
+
+$sides: (
+  't': 'top',
+  'b': 'bottom',
+  'l': 'left',
+  'r': 'right',
+  'a': ('top', 'left', 'bottom', 'right'),
+  'x': ('left', 'right'),
+  'y': ('top', 'bottom'),
+);
+
+
+
+@each $space in $spacingsRem {
+    @each $prefix, $positions in $sides {
+      .p#{$prefix}-#{$space} {
+        @each $pos in $positions {
+            padding-#{$pos}: if($space == auto, $space, #{$space * 0.25}rem);
+        }
+      }
+      .m#{$prefix}-#{$space} {
+        @each $pos in $positions {
+            margin-#{$pos}: if($space == auto, $space, #{$space * 0.25}rem);
+        }
+      }
+  }
+}
+
+
+@each $space in $spacingPx {
+  @each $prefix, $positions in $sides {
+    .p#{$prefix}-#{$space} {
+      @each $pos in $positions {
+          padding-#{$pos}: if($space == auto, $space, #{$space}px);
+      }
+    }
+    .m#{$prefix}-#{$space} {
+      @each $pos in $positions {
+          margin-#{$pos}: if($space == auto, $space, #{$space}px);
+      }
+    }
+}
+}
+
+
