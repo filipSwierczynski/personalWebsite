@@ -1,0 +1,36 @@
+html {
+  background-color: #151719;
+}
+
+body {
+  max-height: 100vh;
+}
+body .box_container {
+  margin: 40px 40px;
+  border: 1.5px solid rgb(196, 196, 196);
+  height: 90vh;
+}
+body main {
+  margin: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 50px;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 0px;
+}
+nav ul li {
+  display: inline;
+  margin: 0px 20px;
+}
+nav ul li a {
+  color: rgb(196, 196, 196);
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=style.css.map */
