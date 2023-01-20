@@ -2,6 +2,27 @@ html {
   background-color: #151719;
 }
 
+.box_container {
+  background: linear-gradient(49deg, #151719, #222, #171616, #151515);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  33% {
+    background-position: 33% 33%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 body {
   max-height: 100vh;
 }
@@ -10,8 +31,32 @@ body .box_container {
   border: 1.5px solid rgb(196, 196, 196);
   height: 90vh;
 }
+body .box_container .logo_container {
+  color: #fff;
+}
 body main {
-  margin: 20px;
+  margin: 30px;
+  height: calc(100% - 92px);
+}
+body main .section_container {
+  color: #fff;
+  position: relative;
+  height: 100%;
+  transition: opacity 0.3s linear 2s;
+}
+body main .section_container.hidden {
+  display: none;
+  opacity: 0;
+}
+body main .home_container .bio_desc {
+  position: absolute;
+  width: 40%;
+  top: 35%;
+}
+@media (max-width: 768px) {
+  body main .home_container .bio_desc {
+    width: 90%;
+  }
 }
 
 header {
@@ -27,10 +72,85 @@ nav ul {
 nav ul li {
   display: inline;
   margin: 0px 20px;
+  position: relative;
 }
 nav ul li a {
-  color: rgb(196, 196, 196);
+  color: #fff;
   text-decoration: none;
+}
+nav ul li:nth-of-type(1) a:first-of-type::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #fff;
+  transform: scaleX(0);
+  transform-origin: top left;
+  transition: transform 0.3s ease;
+}
+nav ul li:nth-of-type(1) a:first-of-type:hover {
+  opacity: 1;
+}
+nav ul li:nth-of-type(1) a:first-of-type:hover::before {
+  transform: scaleX(1);
+}
+nav ul li:nth-of-type(1) a:first-of-type.active {
+  opacity: 1;
+}
+nav ul li:nth-of-type(1) a:first-of-type.active::before {
+  transform: scaleX(1);
+}
+nav ul li:nth-of-type(2) a:first-of-type::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #fff;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+nav ul li:nth-of-type(2) a:first-of-type:hover {
+  opacity: 1;
+}
+nav ul li:nth-of-type(2) a:first-of-type:hover::before {
+  transform: scaleX(1);
+}
+nav ul li:nth-of-type(2) a:first-of-type.active {
+  opacity: 1;
+}
+nav ul li:nth-of-type(2) a:first-of-type.active::before {
+  transform: scaleX(1);
+}
+nav ul li:nth-of-type(3) a:first-of-type::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #fff;
+  transform: scaleX(0);
+  transform-origin: top right;
+  transition: transform 0.3s ease;
+}
+nav ul li:nth-of-type(3) a:first-of-type:hover {
+  opacity: 1;
+}
+nav ul li:nth-of-type(3) a:first-of-type:hover::before {
+  transform: scaleX(1);
+}
+nav ul li:nth-of-type(3) a:first-of-type.active {
+  opacity: 1;
+}
+nav ul li:nth-of-type(3) a:first-of-type.active::before {
+  transform: scaleX(1);
 }
 
 /*# sourceMappingURL=style.css.map */
