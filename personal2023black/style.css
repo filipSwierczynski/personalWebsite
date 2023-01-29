@@ -1,9 +1,9 @@
 html {
-  background-color: #151719;
+  background-color: #0D0D0D;
 }
 
 .box_container {
-  background: linear-gradient(49deg, #151719, #222, #171616, #151515);
+  background: linear-gradient(49deg, #0D0D0D, #0D0D0D, #191818, #151515);
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
   height: 100vh;
@@ -27,8 +27,8 @@ body {
   max-height: 100vh;
 }
 body .box_container {
-  margin: 40px 40px;
-  border: 1.5px solid rgb(196, 196, 196);
+  margin: 30px;
+  border: 0.7px solid rgb(196, 196, 196);
   height: 90vh;
 }
 body .box_container .logo_container {
@@ -42,10 +42,14 @@ body main .section_container {
   color: #fff;
   position: relative;
   height: 100%;
-  transition: opacity 0.3s linear 2s;
+  display: block;
+}
+body main .section_container.visible {
+  transition: opacity 0.8s linear 0.15s;
+  opacity: 1;
 }
 body main .section_container.hidden {
-  display: none;
+  height: 0px;
   opacity: 0;
 }
 body main .home_container .bio_desc {
@@ -89,7 +93,7 @@ nav ul li:nth-of-type(1) a:first-of-type::before {
   background-color: #fff;
   transform: scaleX(0);
   transform-origin: top left;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 nav ul li:nth-of-type(1) a:first-of-type:hover {
   opacity: 1;
@@ -113,7 +117,7 @@ nav ul li:nth-of-type(2) a:first-of-type::before {
   left: 0;
   background-color: #fff;
   transform: scaleX(0);
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 nav ul li:nth-of-type(2) a:first-of-type:hover {
   opacity: 1;
@@ -138,7 +142,7 @@ nav ul li:nth-of-type(3) a:first-of-type::before {
   background-color: #fff;
   transform: scaleX(0);
   transform-origin: top right;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 nav ul li:nth-of-type(3) a:first-of-type:hover {
   opacity: 1;
