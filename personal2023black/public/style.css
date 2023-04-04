@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+html {
+  background-color: #0D0D0D;
+  font-family: "Lato";
+}
+
+.box_container {
+  background: linear-gradient(49deg, #0d0d0d, #242222, #101010, #141414);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  33% {
+    background-position: 33% 33%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+body {
+  max-height: 100vh;
+}
+body .box_container {
+  margin: 30px;
+  border: 0.7px solid rgb(196, 196, 196);
+  height: 90vh;
+}
+body .box_container .logo_container {
+  color: #fff;
+}
+body main {
+  margin: 30px;
+  height: calc(100% - 115px);
+}
+body main .section_container {
+  color: #fff;
+  position: relative;
+  height: 100%;
+  display: block;
+}
+body main .section_container.visible {
+  transition: opacity 0.8s linear 0.15s;
+  opacity: 1;
+}
+body main .section_container.hidden {
+  height: 0px;
+  opacity: 0;
+}
+body main .home_container .name_title h2 {
+  font-weight: 100;
+  font-size: 2.6em;
+  margin-bottom: 7px;
+}
+body main .home_container .name_title h3 {
+  font-weight: 300;
+  font-size: 1.6em;
+  margin-top: 0px;
+}
+body main .home_container .bio_desc {
+  position: absolute;
+  width: 40%;
+  top: 35%;
+  font-weight: 300;
+  font-size: 1.2em;
+  font-weight: 100;
+  letter-spacing: 0.4px;
+}
+@media (max-width: 768px) {
+  body main .home_container .bio_desc {
+    width: 90%;
+  }
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin: 0px 50px;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 0px;
+}
+nav ul li {
+  display: inline;
+  margin: 0px 20px;
+  position: relative;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+}
+nav ul li:nth-of-type(1) a:first-of-type::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 94%;
+  height: 1.3px;
+  bottom: -3.3px;
+  left: 0;
+  background-color: #fff;
+  transform: scaleX(0);
+  transform-origin: top left;
+  transition: transform 0.5s ease;
+}
+nav ul li:nth-of-type(1) a:first-of-type:hover {
+  opacity: 1;
+}
+nav ul li:nth-of-type(1) a:first-of-type:hover::before {
+  transform: scaleX(1);
+}
+nav ul li:nth-of-type(1) a:first-of-type.active {
+  opacity: 1;
+}
+nav ul li:nth-of-type(1) a:first-of-type.active::before {
+  transform: scaleX(1);
+}
+nav ul li:nth-of-type(2) a:first-of-type::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 94%;
+  height: 1.3px;
+  bottom: -3.3px;
+  left: 0;
+  background-color: #fff;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+nav ul li:nth-of-type(2) a:first-of-type:hover {
+  opacity: 1;
+}
+nav ul li:nth-of-type(2) a:first-of-type:hover::before {
+  transform: scaleX(1);
+}
+nav ul li:nth-of-type(2) a:first-of-type.active {
+  opacity: 1;
+}
+nav ul li:nth-of-type(2) a:first-of-type.active::before {
+  transform: scaleX(1);
+}
+nav ul li:nth-of-type(3) a:first-of-type::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 94%;
+  height: 1.3px;
+  bottom: -3.3px;
+  left: 0;
+  background-color: #fff;
+  transform: scaleX(0);
+  transform-origin: top right;
+  transition: transform 0.5s ease;
+}
+nav ul li:nth-of-type(3) a:first-of-type:hover {
+  opacity: 1;
+}
+nav ul li:nth-of-type(3) a:first-of-type:hover::before {
+  transform: scaleX(1);
+}
+nav ul li:nth-of-type(3) a:first-of-type.active {
+  opacity: 1;
+}
+nav ul li:nth-of-type(3) a:first-of-type.active::before {
+  transform: scaleX(1);
+}
+
+.projects_list .project_item {
+  padding: 5px 0px;
+}
+
+.main_footer {
+  color: #fff;
+  font-size: 12px;
+}
+
+/*# sourceMappingURL=style.css.map */

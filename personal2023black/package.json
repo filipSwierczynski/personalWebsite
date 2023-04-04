@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "firebase": "^9.19.0",
+    "sass": "^1.57.1"
+  },
+  "devDependencies": {
+    "firebase-tools": "^11.25.2"
+  }
+}
