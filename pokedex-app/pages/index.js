@@ -1,6 +1,6 @@
 
 import axios from "axios"
-import { Key, ReactElement, JSXElementConstructor, ReactFragment,useState,useEffect } from "react";
+import { Key, ReactElement, JSXElementConstructor, ReactFragment,useState,useEffect, use } from "react";
 import SearchPokemon from '../components/search-pokemon';
 import PokemonList from '../components/pokemon-list';
 import SinglePokemon from '../components/single-pokemon';
@@ -10,40 +10,44 @@ export default function Home(props) {
   const [pokemonSearched,setPokemonSearched] = useState(false);
   const [currentPokemonIndex,setCurrentPokemonIndex] = useState(0);
   const [nextPokemonData,setNextPokemonData] = useState({});
+  const [pokemonList,setPokemonList] = useState([]);
 
-  
+ 
 
-  const [pokemonList,setPokemonList] = useState([])
 
   const searchPokemonValue = async (inputValue) => {
     const response = await axios.get('https://pokeapi.co/api/v2/pokemon/' + inputValue);
     setPokemonData(response.data);
     setPokemonSearched(true);
     setCurrentPokemonIndex(response.data.id);
-    // console.log(pokemonData);
     
   }
 
-
-   const loadPokemonList = async () => {
+ 
+   const loadPokemonListData = async () => {
+    
     const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/?limit=20&offset=${currentPokemonIndex}`);
     setPokemonList(response.data);
     
-    console.log(pokemonList);
-  }
- 
+    
+      }
+      
 
-  
+    
     useEffect(()=>{
-      loadPokemonList();
+      loadPokemonListData();
+
     },[]);
   
     useEffect(()=>{
-      loadPokemonList();
+      loadPokemonListData();
     },[currentPokemonIndex]);
-  
 
+    
+   
 
+   
+    
   return (
     <>
     <div>
@@ -52,7 +56,9 @@ export default function Home(props) {
     <SearchPokemon onSearch={searchPokemonValue}/>
 
 
-     <PokemonList pokeList={pokemonList}/>
+    
+    
+     
 
       
 
@@ -60,6 +66,9 @@ export default function Home(props) {
           <SinglePokemon pokemon={pokemonData}/>
           
         }
+
+
+{Object.keys(pokemonList).length > 0 ? <PokemonList pokemonIndex={currentPokemonIndex}/> : "" }
 
        
         
