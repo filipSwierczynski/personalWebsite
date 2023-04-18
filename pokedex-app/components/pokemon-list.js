@@ -16,6 +16,12 @@ const PokemonList = ({pokemonIndex}) => {
       try {
         const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${pokemonIndex}`);
         setPokemonList(response.data.results);
+
+        
+         
+        
+
+       
       } catch (error){
         console.error('error fetching pokemon',error);
       }
@@ -38,18 +44,31 @@ const PokemonList = ({pokemonIndex}) => {
   
   },[pokemonIndex])
 
-  console.log(pokemonList.length,'length')
 
-
+  
 
 useEffect(()=> {
-  pokemonList.map(pokemon => {
-    setIndividualPokeArr({pokemon});
+  
+  
+  
+  pokemonList.forEach(pokemon => {
+
+    const fetchData = async () => {
+      try {
+        const resp = await axios.get(pokemon.url);
+        setIndividualPokeArr(resp.data);
+      }catch (error) {
+        console.log(error);
+      }
+    }
+    fetchData();
   })
 },[pokemonIndex])
 
 
+console.log(pokemonList)
 console.log(individualPokeArr)
+
   
   
   
