@@ -3,13 +3,9 @@ import SinglePokemon from './single-pokemon'
 import axios from 'axios';
 const PokemonList = ({pokemonIndex}) => {
   
-  
   const [pokemonList,setPokemonList] = useState([]);
-  const [individualPokeArr,setIndividualPokeArr] = useState({});
+  const [individualPokeArr,setIndividualPokeArr] = useState([]);
 
-  
-
-  
   useEffect(()=>{
 
     const fetchData = async () => {
@@ -48,38 +44,45 @@ const PokemonList = ({pokemonIndex}) => {
   
 
 useEffect(()=> {
-  
-  
-  
-  pokemonList.forEach(pokemon => {
+  const fetchData = async () => {
+    try {
+      const responses = await Promise.all(
+        pokemonList.map(pokemon => axios.get(pokemon.url))
+      );
+      const individialPokemonArr = [];
 
-    const fetchData = async () => {
-      try {
-        const resp = await axios.get(pokemon.url);
-        setIndividualPokeArr(resp.data);
-      }catch (error) {
-        console.log(error);
-      }
+      responses.forEach((resp,index)=>{
+        individialPokemonArr.push(resp.data);
+      });
+
+      setIndividualPokeArr([individialPokemonArr])
+
+
+    } catch (error) {
+      console.log(error);
     }
+  }
+  
+  
+ 
     fetchData();
-  })
+ 
+
 },[pokemonIndex])
 
 
-console.log(pokemonList)
-console.log(individualPokeArr)
 
-  
-  
-  
-   
-  
+
 
 
   return (
     <div>
         <ul>
-          {/* {pokemonList.map(item=><p key={item.name}>{item.name}</p>)} */}
+          {individualPokeArr.length > 0 ? 
+          individualPokeArr[0].map(item=> <div key={item.id}>{item.name}</div>) : ""}
+        
+          
+          
       </ul>
 
     </div>
