@@ -6,10 +6,7 @@ const SearchPokemon = (props) => {
 
     function handleFormSubmit(e){
         e.preventDefault();
-
-        
         setInputValue('');
-
         if((inputValue > 1008 || inputValue < 1)){
           setInvalidInput(!invalidInput);
         } else {

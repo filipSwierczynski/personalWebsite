@@ -6,38 +6,17 @@ const PokemonList = ({pokemonIndex}) => {
   const [pokemonList,setPokemonList] = useState([]);
   const [individualPokeArr,setIndividualPokeArr] = useState([]);
 
-  useEffect(()=>{
 
+  useEffect(()=>{
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${pokemonIndex}`);
+        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=6&offset=${pokemonIndex}`);
         setPokemonList(response.data.results);
-
-        
-         
-        
-
-       
       } catch (error){
         console.error('error fetching pokemon',error);
       }
     };
-
-   
-
-
-    // const processData = async () => {
-    //   try {
-    //     const resp = await axios.get
-    //   } catch(error) {
-    //     console.log(error);
-    //   }
-    // }
-
-
     fetchData();
-
-  
   },[pokemonIndex])
 
 
@@ -50,25 +29,17 @@ useEffect(()=> {
         pokemonList.map(pokemon => axios.get(pokemon.url))
       );
       const individialPokemonArr = [];
-
       responses.forEach((resp,index)=>{
         individialPokemonArr.push(resp.data);
       });
-
       setIndividualPokeArr([individialPokemonArr])
-
-
+      console.log(individialPokemonArr)
     } catch (error) {
       console.log(error);
     }
   }
-  
-  
- 
     fetchData();
- 
-
-},[pokemonIndex])
+},[pokemonList])
 
 
 
@@ -77,9 +48,9 @@ useEffect(()=> {
 
   return (
     <div>
-        <ul>
+        <ul className='pokemon-list'>
           {individualPokeArr.length > 0 ? 
-          individualPokeArr[0].map(item=> <div key={item.id}>{item.name}</div>) : ""}
+          individualPokeArr[0].map(item=> <SinglePokemon pokemon={item} />) : ""}
         
           
           

@@ -1,3 +1,103 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --pokedexRed: #DC0A2D;
+}
+
+
+
+.pokemon-list {
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.featured-pokemon .single-pokemon {
+    width:250px;
+    margin:auto;
+}
+
+.bug_type {
+    background-color:#92BA2E ;
+}
+
+.flying_type {
+    background-color:#5EB9B2 ;
+}
+
+.fire_type {
+    background-color:#FC0C0B ;
+}
+
+.normal_type {
+    background-color:#ACA974 ;
+}
+
+.poison_type {
+    background-color:#62147F ;
+    color:#fff;
+}
+
+.electric_type {
+    background-color:#959100 ;
+    
+}
+.water_type {
+    background-color:#08517B ;
+    color:#fff;
+    
+}
+.grass_type {
+    background-color:#1F4000 ;
+    color:#fff;
+    
+}
+
+.ground_type {
+    background-color:#C0AC21 ;
+}
+
+.fighting_type {
+    background-color:#810B11 ;
+    color:#fff;
+}
+
+.psychic_type {
+    background-color:#EC0E62 ;
+    color:#fff;
+}
+
+.rock_type {
+    background-color:#483F26 ;
+    color:#fff;
+}
+
+.ice_type {
+    background-color:#103D44 ;
+}
+
+.ghost_type {
+    background-color:#472B53 ;
+    color:#fff;
+}
+
+.dragon_type {
+    background-color:#290C6A ;
+
+
+}
+
+.dark_type {
+    background-color:#2D221D ;
+    color:#fff;
+}
+
+.steel_type {
+    background-color:#444444 ;
+    color:#fff;
+}
+
+.fairy_type {
+    background-color:#F87EA7 ;
+}

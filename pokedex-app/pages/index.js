@@ -5,11 +5,10 @@ import SearchPokemon from '../components/search-pokemon';
 import PokemonList from '../components/pokemon-list';
 import SinglePokemon from '../components/single-pokemon';
 import NextPokemon from '../components/nextPokemon';
-export default function Home(props) {
+export default function Home() {
   const [pokemonData,setPokemonData] = useState({});
   const [pokemonSearched,setPokemonSearched] = useState(false);
-  const [currentPokemonIndex,setCurrentPokemonIndex] = useState(0);
-  const [nextPokemonData,setNextPokemonData] = useState({});
+  const [currentPokemonIndex,setCurrentPokemonIndex] = useState(null);
   const [pokemonList,setPokemonList] = useState([]);
 
  
@@ -17,28 +16,18 @@ export default function Home(props) {
 
   const searchPokemonValue = async (inputValue) => {
     const response = await axios.get('https://pokeapi.co/api/v2/pokemon/' + inputValue);
+    setCurrentPokemonIndex(response.data.id);
     setPokemonData(response.data);
     setPokemonSearched(true);
-    setCurrentPokemonIndex(response.data.id);
     
-  }
+  } 
 
- 
-   const loadPokemonListData = async () => {
-    
+  const loadPokemonListData = async () => {
     const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/?limit=20&offset=${currentPokemonIndex}`);
-    setPokemonList(response.data);
-    
-    
-      }
+    // setPokemonList(response.data);
+  }
       
 
-    
-    useEffect(()=>{
-      loadPokemonListData();
-
-    },[]);
-  
     useEffect(()=>{
       loadPokemonListData();
     },[currentPokemonIndex]);
@@ -50,25 +39,23 @@ export default function Home(props) {
     
   return (
     <>
-    <div>
+    <div className="container mx-auto">
       <h1>Pokedex</h1>
 
     <SearchPokemon onSearch={searchPokemonValue}/>
 
-
-    
-    
-     
-
-      
-
         {pokemonSearched && 
+        <div className="featured-pokemon content-center flex m-auto justify-items-center flex-col text-center w-3/6 m-auto">
           <SinglePokemon pokemon={pokemonData}/>
+        </div>
           
+        }
+        {pokemonSearched && 
+        <PokemonList pokemonIndex={currentPokemonIndex}/> 
         }
 
 
-{Object.keys(pokemonList).length > 0 ? <PokemonList pokemonIndex={currentPokemonIndex}/> : "" }
+
 
        
         
