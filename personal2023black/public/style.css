@@ -5,9 +5,9 @@ html {
 }
 
 .box_container {
-  background: linear-gradient(49deg, #0d0d0d, #242222, #101010, #141414);
+  background: linear-gradient(69deg, #0d0d0d, #242222, #101010, #141414);
   background-size: 400% 400%;
-  animation: gradient 10s ease infinite;
+  animation: gradient 8s ease infinite;
   height: 100vh;
 }
 
@@ -53,9 +53,10 @@ body main .section_container.visible {
 body main .section_container.hidden {
   height: 0px;
   opacity: 0;
+  display: none;
 }
 body main .home_container .name_title h2 {
-  font-weight: 100;
+  font-weight: 500;
   font-size: 2.6em;
   margin-bottom: 7px;
 }
@@ -68,9 +69,9 @@ body main .home_container .bio_desc {
   position: absolute;
   width: 40%;
   top: 35%;
-  font-weight: 300;
+  
   font-size: 1.2em;
-  font-weight: 100;
+  font-weight: 300;
   letter-spacing: 0.4px;
 }
 @media (max-width: 768px) {
