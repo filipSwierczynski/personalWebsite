@@ -8,8 +8,17 @@ import Wrapper from './wrapper'
   return (
     <Fragment>
       <Wrapper>
-      <Navbar />
-        <main>{children}</main>
+     
+        <main>
+          <div className='box_container'>
+          <Navbar />
+            <div className='section_container'>
+            {children}
+            </div>
+            
+          </div>
+          
+          </main>
       </Wrapper>
         
     </Fragment>

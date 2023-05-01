@@ -1,9 +1,12 @@
 import React from 'react';
+import ProjectList from '@/components/projects/project-list';
+import { getAllProjects } from '@/project_data';
 
 const ProjectsPage = () => {
+    const projects = getAllProjects();
     return (
         <>
-        <h1>Projects</h1>
+        <ProjectList projects={projects}/>
     </>
     )
     
