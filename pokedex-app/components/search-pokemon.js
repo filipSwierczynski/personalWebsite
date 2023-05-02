@@ -19,12 +19,13 @@ const SearchPokemon = (props) => {
     const invalidInputText = <p>Invalid Pokemon Number</p>;
 
   return (
-    <div>
+    <div className='search_container'>
       {invalidInput ?  invalidInputText : ""  } 
         <form onSubmit={handleFormSubmit} method="post">
-            <label htmlFor="pokemonName"></label>
-            <input placeholder="Enter Pokemon's name or pokedex index" id="pokemonName" type="text" onChange={(e)=>setInputValue(e.target.value)} value={inputValue} name="pokemonName" />
-            <button type='submit'>Search</button>
+            <label htmlFor="pokemonName">Name or Number</label>
+            <br/>
+            <input id="pokemonName" type="text" onChange={(e)=>setInputValue(e.target.value)} value={inputValue} name="pokemonName" />
+            <button type='submit' value="search">Search</button>
         </form>
     </div>
   )

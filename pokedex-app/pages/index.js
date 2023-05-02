@@ -5,6 +5,7 @@ import SearchPokemon from '../components/search-pokemon';
 import PokemonList from '../components/pokemon-list';
 import SinglePokemon from '../components/single-pokemon';
 import NextPokemon from '../components/nextPokemon';
+import PokemonListItem from '../components/pokemonListItem';
 export default function Home() {
   const [pokemonData,setPokemonData] = useState({});
   const [pokemonSearched,setPokemonSearched] = useState(false);
@@ -54,10 +55,10 @@ export default function Home() {
   return (
     <>
     <div className="container mx-auto">
-      <h1>Pokedex</h1>
+      
 
     <SearchPokemon onSearch={searchPokemonValue}/>
-    {invalidSearch ? <p>Invalid Search term</p> : ""}
+    {invalidSearch ? <p>Invalid Pokemon name</p> : ""}
         {pokemonSearched && 
         <div className="featured-pokemon content-center flex m-auto justify-items-center flex-col text-center w-3/6 m-auto">
           <SinglePokemon pokemon={pokemonData}/>

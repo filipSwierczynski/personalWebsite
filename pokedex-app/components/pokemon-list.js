@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from 'react'
 import SinglePokemon from './single-pokemon'
 import axios from 'axios';
+import PokemonListItem from './pokemonListItem';
 const PokemonList = ({pokemonIndex}) => {
   
   const [pokemonList,setPokemonList] = useState([]);
@@ -10,7 +11,7 @@ const PokemonList = ({pokemonIndex}) => {
   useEffect(()=>{
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=6&offset=${pokemonIndex}`);
+        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=3&offset=${pokemonIndex}`);
         setPokemonList(response.data.results);
       } catch (error){
         console.error('error fetching pokemon',error);
@@ -50,7 +51,7 @@ useEffect(()=> {
     <div>
         <ul className='pokemon-list'>
           {individualPokeArr.length > 0 ? 
-          individualPokeArr[0].map(item=> <SinglePokemon pokemon={item} />) : ""}
+          individualPokeArr[0].map(item=> <PokemonListItem pokemon={item} />) : ""}
         
           
           

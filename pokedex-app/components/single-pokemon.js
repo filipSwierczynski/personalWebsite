@@ -17,8 +17,10 @@ function SinglePokemon(props){
     }
     let pokemonId = id.toString().padStart(4,0);
 
+    const upperCaseName = name.charAt(0).toUpperCase() + name.slice(1);
+    
     return (
-        <div className='single-pokemon '>
+        <div className={"single-pokemon single-pokemon_"+types[0].type.name}>
             
             <div>
                 {shiny ? shinyImages : normalImages}
@@ -27,10 +29,10 @@ function SinglePokemon(props){
                 
             </div>
             <div className='container'>
-            <div className="flex justify-center space-x-3"> <span>#{pokemonId}</span> <h1>{name}</h1></div>
+            <div className="flex justify-center space-x-3"> <span>#{pokemonId}</span> <h1 className=''>{upperCaseName}</h1></div>
             <div className='flex justify-center space-x-3 text-center'>
                 
-                {types.map(type=><div className={type.type.name + "_type w-1/2"} key={type.slot}><span className={type.type.name + "_type-icon"}></span>{type.type.name}</div>)}
+                {types.map(type=><div className={type.type.name + "_type w-1/2 rounded"} key={type.slot}><span className={type.type.name + "_type-icon"}></span>{type.type.name.charAt(0).toUpperCase() + type.type.name.slice(1) }</div>)}
             </div>
             <div className='flex justify-center space-x-3'>
 
@@ -39,9 +41,9 @@ function SinglePokemon(props){
                 
             </div>
             
-            <div>
+            <div className='pokemon_stats flex flex-wrap'>
                 
-                {stats.map((stat,i) => <div key={i}>{stat.stat.name}:{stat.base_stat}</div>)}
+                {stats.map((stat,i) => <div className='w-1/2 text-left' key={i}>{stat.stat.name}:{stat.base_stat}</div>)}
             </div>
             </div>
            
