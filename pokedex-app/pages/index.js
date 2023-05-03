@@ -58,9 +58,9 @@ export default function Home() {
       
 
     <SearchPokemon onSearch={searchPokemonValue}/>
-    {invalidSearch ? <p>Invalid Pokemon name</p> : ""}
+    {invalidSearch ? <p class="invalid_pokemon_name">Invalid Pokemon name</p> : ""}
         {pokemonSearched && 
-        <div className="featured-pokemon content-center flex m-auto justify-items-center flex-col text-center w-3/6 m-auto">
+        <div className="featured-pokemon content-center flex m-auto justify-items-center flex-col text-center  m-auto">
           <SinglePokemon pokemon={pokemonData}/>
         </div>
           

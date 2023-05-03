@@ -16,17 +16,18 @@ const SearchPokemon = (props) => {
         }
     }
 
-    const invalidInputText = <p>Invalid Pokemon Number</p>;
+    const invalidInputText = <p className='invalid_pokemon_name'>Invalid Pokemon Number</p>;
 
   return (
     <div className='search_container'>
-      {invalidInput ?  invalidInputText : ""  } 
+      
         <form onSubmit={handleFormSubmit} method="post">
             <label htmlFor="pokemonName">Name or Number</label>
             <br/>
             <input id="pokemonName" type="text" onChange={(e)=>setInputValue(e.target.value)} value={inputValue} name="pokemonName" />
             <button type='submit' value="search">Search</button>
         </form>
+        {invalidInput ?  invalidInputText : ""  } 
     </div>
   )
 }

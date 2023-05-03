@@ -195,3 +195,32 @@ padding: 15px;}
     transition: background-color 0.2s ease-in-out;
         background-color: #1b82b1;
 }
+.invalid_pokemon_name {
+    text-align: center;
+    text-decoration: underline;
+    
+}
+
+
+
+@media screen and (max-width:360px) {
+    .featured-pokemon .single-pokemon {
+        width:96%;
+        margin:auto;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .search_container form {
+        width: 95%;
+        margin: auto;
+    }
+    .search_container input {
+width:100%;
+    }
+    .search_container button {
+        width: 100%;
+        left: 0px;
+        margin-top:7px
+    }
+
+}
