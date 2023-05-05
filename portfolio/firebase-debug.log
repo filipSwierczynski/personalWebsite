@@ -1,0 +1,81 @@
+[debug] [2023-05-05T20:00:13.495Z] ----------------------------------------------------------------------
+[debug] [2023-05-05T20:00:13.497Z] Command:       /usr/local/bin/firebase /Users/filip/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2023-05-05T20:00:13.497Z] CLI Version:   11.25.2
+[debug] [2023-05-05T20:00:13.498Z] Platform:      darwin
+[debug] [2023-05-05T20:00:13.498Z] Node Version:  v16.16.0
+[debug] [2023-05-05T20:00:13.499Z] Time:          Fri May 05 2023 16:00:13 GMT-0400 (Eastern Daylight Time)
+[debug] [2023-05-05T20:00:13.500Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-05-05T20:00:13.623Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-05-05T20:00:13.623Z] > authorizing via signed-in user (filipsdev@gmail.com)
+[debug] [2023-05-05T20:00:13.624Z] [iam] checking project filipsw-de3ab for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-05-05T20:00:13.626Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/filipsw-de3ab:testIamPermissions [none]
+[debug] [2023-05-05T20:00:13.627Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/filipsw-de3ab:testIamPermissions x-goog-quota-user=projects/filipsw-de3ab
+[debug] [2023-05-05T20:00:13.628Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/filipsw-de3ab:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-05-05T20:00:14.004Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/filipsw-de3ab:testIamPermissions 200
+[debug] [2023-05-05T20:00:14.007Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/filipsw-de3ab:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-05-05T20:00:14.009Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/filipsw-de3ab [none]
+[debug] [2023-05-05T20:00:14.352Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/filipsw-de3ab 200
+[debug] [2023-05-05T20:00:14.355Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/filipsw-de3ab {"projectId":"filipsw-de3ab","projectNumber":"737502907002","displayName":"filipsw","name":"projects/filipsw-de3ab","resources":{"hostingSite":"filipsw-de3ab"},"state":"ACTIVE","etag":"1_2e2870c3-d0ba-4232-9944-8b6e8b321fe0"}
+[debug] [2023-05-05T20:00:47.354Z] Error: Command failed: npm i --omit dev --no-audit
+    at checkExecSyncError (node:child_process:828:11)
+    at Object.execSync (node:child_process:899:15)
+    at execSync (pkg/prelude/bootstrap.js:2111:30)
+    at prepareFrameworks (/Users/filip/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/frameworks/index.js:372:42)
+    at async deploy (/Users/filip/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/deploy/index.js:53:13)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-05-05T20:02:41.935Z] ----------------------------------------------------------------------
+[debug] [2023-05-05T20:02:41.937Z] Command:       /usr/local/bin/firebase /Users/filip/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2023-05-05T20:02:41.937Z] CLI Version:   11.25.2
+[debug] [2023-05-05T20:02:41.938Z] Platform:      darwin
+[debug] [2023-05-05T20:02:41.938Z] Node Version:  v16.16.0
+[debug] [2023-05-05T20:02:41.939Z] Time:          Fri May 05 2023 16:02:41 GMT-0400 (Eastern Daylight Time)
+[debug] [2023-05-05T20:02:41.940Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-05-05T20:02:42.064Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-05-05T20:02:42.064Z] > authorizing via signed-in user (filipsdev@gmail.com)
+[debug] [2023-05-05T20:02:42.065Z] [iam] checking project filipsw-de3ab for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-05-05T20:02:42.067Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/filipsw-de3ab:testIamPermissions [none]
+[debug] [2023-05-05T20:02:42.068Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/filipsw-de3ab:testIamPermissions x-goog-quota-user=projects/filipsw-de3ab
+[debug] [2023-05-05T20:02:42.069Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/filipsw-de3ab:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-05-05T20:02:42.392Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/filipsw-de3ab:testIamPermissions 200
+[debug] [2023-05-05T20:02:42.396Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/filipsw-de3ab:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-05-05T20:02:42.398Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/filipsw-de3ab [none]
+[debug] [2023-05-05T20:02:42.832Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/filipsw-de3ab 200
+[debug] [2023-05-05T20:02:42.835Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/filipsw-de3ab {"projectId":"filipsw-de3ab","projectNumber":"737502907002","displayName":"filipsw","name":"projects/filipsw-de3ab","resources":{"hostingSite":"filipsw-de3ab"},"state":"ACTIVE","etag":"1_2e2870c3-d0ba-4232-9944-8b6e8b321fe0"}
+[debug] [2023-05-05T20:02:59.210Z] Error: Command failed: npm i --omit dev --no-audit
+    at checkExecSyncError (node:child_process:828:11)
+    at Object.execSync (node:child_process:899:15)
+    at execSync (pkg/prelude/bootstrap.js:2111:30)
+    at prepareFrameworks (/Users/filip/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/frameworks/index.js:372:42)
+    at async deploy (/Users/filip/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/deploy/index.js:53:13)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-05-05T20:04:36.357Z] ----------------------------------------------------------------------
+[debug] [2023-05-05T20:04:36.358Z] Command:       /usr/local/bin/firebase /Users/filip/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2023-05-05T20:04:36.359Z] CLI Version:   11.25.2
+[debug] [2023-05-05T20:04:36.359Z] Platform:      darwin
+[debug] [2023-05-05T20:04:36.359Z] Node Version:  v16.16.0
+[debug] [2023-05-05T20:04:36.360Z] Time:          Fri May 05 2023 16:04:36 GMT-0400 (Eastern Daylight Time)
+[debug] [2023-05-05T20:04:36.360Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-05-05T20:04:36.474Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-05-05T20:04:36.475Z] > authorizing via signed-in user (filipsdev@gmail.com)
+[debug] [2023-05-05T20:04:36.475Z] [iam] checking project filipsw-de3ab for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-05-05T20:04:36.477Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/filipsw-de3ab:testIamPermissions [none]
+[debug] [2023-05-05T20:04:36.478Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/filipsw-de3ab:testIamPermissions x-goog-quota-user=projects/filipsw-de3ab
+[debug] [2023-05-05T20:04:36.479Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/filipsw-de3ab:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-05-05T20:04:36.834Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/filipsw-de3ab:testIamPermissions 200
+[debug] [2023-05-05T20:04:36.837Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/filipsw-de3ab:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-05-05T20:04:36.839Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/filipsw-de3ab [none]
+[debug] [2023-05-05T20:04:37.204Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/filipsw-de3ab 200
+[debug] [2023-05-05T20:04:37.207Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/filipsw-de3ab {"projectId":"filipsw-de3ab","projectNumber":"737502907002","displayName":"filipsw","name":"projects/filipsw-de3ab","resources":{"hostingSite":"filipsw-de3ab"},"state":"ACTIVE","etag":"1_2e2870c3-d0ba-4232-9944-8b6e8b321fe0"}
+[debug] [2023-05-05T20:04:51.897Z] Error: Command failed: npm i --omit dev --no-audit
+    at checkExecSyncError (node:child_process:828:11)
+    at Object.execSync (node:child_process:899:15)
+    at execSync (pkg/prelude/bootstrap.js:2111:30)
+    at prepareFrameworks (/Users/filip/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/frameworks/index.js:372:42)
+    at async deploy (/Users/filip/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/deploy/index.js:53:13)
+[error] 
+[error] Error: An unexpected error has occurred.
