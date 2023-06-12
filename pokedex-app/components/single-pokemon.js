@@ -25,7 +25,7 @@ function SinglePokemon(props){
             <div>
                 {shiny ? shinyImages : normalImages}
                 
-                <button onClick={handleShiny}>Show Shiny</button>
+                <button className='shiny_button' onClick={handleShiny}>Show Shiny</button>
                 
             </div>
             <div className='container'>

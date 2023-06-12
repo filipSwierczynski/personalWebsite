@@ -63,36 +63,52 @@
             </div>
             <div class="projects_container section_container hidden">
                 <div class="projects_list">
-                    <!-- <div class="project_item">
+                    <div class="project_item">
                         <h2>
                             Pokedex
                         </h2>
-                        <p>Project Details</p>
+                        <div class="project_images">
+                            <img src="https://placehold.co/140x240" />
+                            <img src="https://placehold.co/140x240" />
+                            <img src="https://placehold.co/140x240" />
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta vero ut aspernatur ipsum dignissimos eius blanditiis at dolorum saepe, facere aliquam nulla exercitationem nostrum deleniti commodi laboriosam doloremque praesentium veniam!</p>
                         <p>Live</p>
                     </div>
                     <div class="project_item">
                         <h2>
-                            Daily Journal
+                            Pokedex
                         </h2>
-                        <p>Project Details</p>
+                        <div class="project_images">
+                            <img src="https://placehold.co/140x240" />
+                            <img src="https://placehold.co/140x240" />
+                            <img src="https://placehold.co/140x240" />
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta vero ut aspernatur ipsum dignissimos eius blanditiis at dolorum saepe, facere aliquam nulla exercitationem nostrum deleniti commodi laboriosam doloremque praesentium veniam!</p>
                         <p>Live</p>
                     </div>
                     <div class="project_item">
                         <h2>
-                            Pomodoro 
+                            Pokedex
                         </h2>
-                        <p>Project Details / Live</p>
-                    </div> -->
-                    <h1>
+                        <div class="project_images">
+                            <img src="https://placehold.co/140x240" />
+                            <img src="https://placehold.co/140x240" />
+                            <img src="https://placehold.co/140x240" />
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta vero ut aspernatur ipsum dignissimos eius blanditiis at dolorum saepe, facere aliquam nulla exercitationem nostrum deleniti commodi laboriosam doloremque praesentium veniam!</p>
+                        <p>Live</p>
+                    </div>
+                    <!-- <h1>
                         Coming soon... ツ 
-                    </h1>
+                    </h1> -->
                 </div>
             </div>
             <div class="contact_container section_container hidden">
                 <div class="container-center">
-                    Do you want to work with me ? 
-
-                    <h2>Send me an email or connect on LinkedIn</h2>
+                    Contact me !
+                    <p id="email_text" class="hidden_p">filipsdev@gmail.com</p>
+                    <h2>Send me an email at <button class="email_button" onclick="copyEmail()">filipsdev@gmail.com</button> or connect on LinkedIn</h2>
                     <div class="email_link"></div>
                     <div class="linked_in"></div>
     
@@ -102,12 +118,22 @@
             
            </main>
            <div class="main_footer">
-            <a href="https://www.linkedin.com/in/filip-swierczynski-a78151115/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/filip-swierczynski-a78151115/" target="_blank" rel="noopener noreferrer">LinkedIn <span class="linkedin_icon social_icon"></span></a>
         </div>
 
            
     </div>
-  
+    <script>
+        let text = document.getElementById('email_text').innerHTML;
+        const copyEmail = async () => {
+          try {
+            await navigator.clipboard.writeText(text);
+            console.log('Content copied to clipboard');
+          } catch (err) {
+            console.error('Failed to copy: ', err);
+          }
+        }
+      </script>
     <script src="./script.js"></script>
 
     
