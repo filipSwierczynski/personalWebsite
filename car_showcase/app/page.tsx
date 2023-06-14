@@ -1,9 +1,13 @@
-import Image from 'next/image'
-
+import { Hero } from "@/components"
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      
+    <main className="overflow-hidden">
+      <Hero />
+      <div className="mt-12 padding-x paddin-y max-width" id="discover">
+      <div className="home__text-container ">
+        <h1 className="text-4xl font-extrabold">Car Catalogue</h1>
+      </div>
+      </div>
     </main>
   )
 }
