@@ -95,9 +95,12 @@ body main .home_container .bio_desc {
   font-family: "Lato";
   text-decoration: underline;
 }
-.container-center h2 a {
+.container-center h2 a, .resume_download {
   color:#fff;
   text-decoration: underline;
+}
+.resume_download {
+  
 }
 header {
   display: flex;
@@ -242,6 +245,11 @@ nav ul li:nth-of-type(3) a:first-of-type.active::before {
     width: 20px; 
     height: 20px;
     left: 5px;
+}
+.contact_container h1{
+  font-weight: 500;
+    font-size: 2.6em;
+    margin-bottom: 7px;
 }
 .hidden_p {
   display: none;
