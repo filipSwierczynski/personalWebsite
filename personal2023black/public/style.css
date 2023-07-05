@@ -40,6 +40,9 @@ body .box_container {
   background-size: 400% 400%;
   animation: gradient 5s ease infinite;
 }
+.box_container::-webkit-scrollbar{
+  display: none;
+}
 
 body .box_container .logo_container {
   color: #fff;
