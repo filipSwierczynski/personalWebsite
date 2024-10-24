@@ -1,24 +1,24 @@
-// Import the functions you need from the SDKs you need
-// import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js';
+import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics.js';
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-// const firebaseConfig = {
-//   apiKey: "AIzaSyBdo-QDuONXq4zml-IvgjbUSacoI5DKrr4",
-//   authDomain: "filipsw-de3ab.firebaseapp.com",
-//   projectId: "filipsw-de3ab",
-//   storageBucket: "filipsw-de3ab.appspot.com",
-//   messagingSenderId: "737502907002",
-//   appId: "1:737502907002:web:005556f4f3d497a0bbc9c3",
-//   measurementId: "G-QTNE25RWNR"
-// };
+const firebaseConfig = {
+  apiKey: "AIzaSyBdo-QDuONXq4zml-IvgjbUSacoI5DKrr4",
+  authDomain: "filipsw-de3ab.firebaseapp.com",
+  projectId: "filipsw-de3ab",
+  storageBucket: "filipsw-de3ab.appspot.com",
+  messagingSenderId: "737502907002",
+  appId: "1:737502907002:web:005556f4f3d497a0bbc9c3",
+  measurementId: "G-QTNE25RWNR"
+};
 
 // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 $('.link').click(function(e){
     e.preventDefault();

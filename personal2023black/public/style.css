@@ -38,7 +38,7 @@ body .box_container {
   flex-direction: column;
   background: linear-gradient(69deg, #0d0d0d, #242222, #101010, #141414);
   background-size: 400% 400%;
-  animation: gradient 5s ease infinite;
+  animation: gradient 5s linear infinite;
 }
 .box_container::-webkit-scrollbar{
   display: none;
