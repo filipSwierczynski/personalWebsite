@@ -1,229 +1,273 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+// Variables
+$primary-bg: #0d0d0d;
+$secondary-bg: #242222;
+$accent-bg: #141414;
+$text-color: #fff;
+$transition-speed: 0.5s;
 
-html {
-  background-color: #0D0D0D;
-  font-family: 'Lato';
+// Global Styles
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  background: transparent;
+  color: $text-color;
+  overflow-x: hidden;
 }
 
-.box_container {
-  background: linear-gradient(49deg, #0d0d0d, #242222, #101010, #141414);  background-size: 400% 400%;
+// Shared Animated Background Layer
+.background-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; // behind all other content
+  background: linear-gradient(49deg, $primary-bg, $secondary-bg, $primary-bg, $accent-bg);
+  background-size: 400% 400%;
   animation: gradient 7s ease infinite;
-  height: 100vh;
 }
 
+// Gradient Animation
 @keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  33% {
-    background-position: 33% 33%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0%   { background-position: 0% 50%; }
+  33%  { background-position: 33% 33%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-body {
-  max-height: 100vh;
-
-  .box_container {
-    margin: 30px;
-    border: 0.7px solid rgb(196, 196, 196);
-    height: 90vh;
-    .logo_container {
-        color:#fff;
-    }
-  }
-  main {
-    margin: 30px;
-    height:calc(100% - 115px);
-
-    .section_container {
-        color:#fff;
-        position: relative;
-        height: 100%;
-        
-       
-        display: block;
-        &.visible {
-        transition: opacity 0.8s linear 0.15s;
-        opacity: 1;
-        }
-        &.hidden {
-           height: 0px;
-            opacity: 0;
-
-        }
-
-    }
-    .home_container {
-        .name_title {
-            h2 {
-                font-weight: 100;
-                font-size: 2.6em;
-                margin-bottom: 7px;
-            }
-            h3 {
-                font-weight: 300;
-                font-size: 1.6em;
-                margin-top: 0px;
-            }
-        }
-        .bio_desc {
-            position:absolute;
-            width: 40%;
-            top: 35%;
-            font-weight: 300;
-            font-size: 1.2em;
-            font-weight: 100;
-            letter-spacing: 0.4px;
-            @media (max-width:768px) {
-                width: 90%;
-
-            }
-        }
-    }
-  }
+// Box Container (Wrapper for Content)
+.box_container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  // Remove its own background so it shows the shared background-layer
 }
+
+// Header & Navigation
 header {
   display: flex;
-  justify-content: center;
-  margin: 0px 50px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
 }
 nav {
   ul {
     list-style: none;
-    padding-left: 0px;
+    display: flex;
+    margin: 0;
+    padding: 0;
     li {
-      display: inline;
-      margin: 0px 20px;
-      position: relative;
+      margin: 0 20px;
       a {
-        color: #fff;
-         text-decoration: none;
-         font-weight: 300;
-         font-size: 16px;
-         letter-spacing: 0.8px;
-
-         
-      }
-      &:nth-of-type(1) {
-        a {
-          &:first-of-type {
-            &::before {
-              content: "";
-              position: absolute;
-              display: block;
-              width: 94%;
-              height: 1.3px;
-              bottom: -3.3px;
-              
-              left: 0;
-              background-color: #fff;
-              transform: scaleX(0);
-              transform-origin: top left;
-              transition: transform 0.5s ease;
-            }
-            &:hover {
-              opacity: 1;
-            }
-            &:hover::before {
-              transform: scaleX(1);
-            }
-            &.active {
-                opacity: 1;
-                &::before {
-                    transform: scaleX(1);
-                }
-            }
-          }
-         
-        
+        color: $text-color;
+        text-decoration: none;
+        font-weight: 300;
+        font-size: 16px;
+        letter-spacing: 0.8px;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background-color: $text-color;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform $transition-speed;
+        }
+        &:hover::before,
+        &.active::before {
+          transform: scaleX(1);
         }
       }
+    }
+  }
+}
 
-      &:nth-of-type(2) {
-        a {
-          &:first-of-type {
-            &::before {
-              content: "";
-              position: absolute;
-              display: block;
-              width: 94%;
-              height: 1.3px;
-              bottom: -3.3px;
-              
-              left: 0;
-              background-color: #fff;
-              transform: scaleX(0);
-              transition: transform 0.5s ease;
-            }
-            &:hover {
-              opacity: 1;
-            }
-            &:hover::before {
-              transform: scaleX(1);
-            }
-            &.active {
-                opacity: 1;
-                &::before {
-                    transform: scaleX(1);
-                }
-            }
-          }
-        }
-      }
+// Main Section (Full viewport height with scrolling)
+main {
+  height: 100vh;
+  overflow-y: auto;
+  flex: 1;
+}
 
-      &:nth-of-type(3) {
-        a {
-          &:first-of-type {
-            &::before {
-              content: "";
-              position: absolute;
-              display: block;
-              width: 94%;
-              height: 1.3px;
-              bottom: -3.3px;
-              
-              left: 0;
-              background-color: #fff;
-              transform: scaleX(0);
-              transform-origin: top right;
-              transition: transform 0.5s ease;
-            }
-            &:hover {
-              opacity: 1;
-            }
-            &:hover::before {
-              transform: scaleX(1);
-            }
-            &.active {
-                opacity: 1;
-                &::before {
-                    transform: scaleX(1);
-                }
-            }
-          }
-        }
-      }
+// Sections (Home, Projects, Resume, etc.)
+.section_container {
+  padding: 40px;
+  transition: opacity $transition-speed;
+  &.hidden {
+    display: none;
+    opacity: 0;
+  }
+  &.visible {
+    display: block;
+    opacity: 1;
+  }
+}
 
-
+// Fixed Footer (Always visible on desktop)
+.main_footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  padding: 20px;
+  font-size: 12px;
+  // Instead of duplicating the animation, use a semi-transparent background to overlay the shared background
+  // background: rgba(13, 13, 13, 0.9);
+  z-index: 1000;
+  a {
+    color: $text-color;
+    font-size: 1.2em;
+    margin: 0 10px;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
     }
   }
 }
 
 
-.projects_list {
-    .project_item {
-        padding: 5px 0px;
-    }
+#resume {
+  background: rgba(255, 255, 255, 0.98);
+  color: #333;
+  padding: 40px;
+  border-radius: 8px;
+  max-width: 900px;
+  margin: 40px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  font-family: 'Lato', sans-serif;
+  line-height: 1.6;
 }
 
+/* Header */
+.resume-header {
+  text-align: center;
+  margin-bottom: 2em;
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.2em;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #555;
+    margin-bottom: 0.5em;
+  }
+  
+  address {
+    font-style: normal;
+    p {
+      margin: 0.5em 0;
+    }
+  }
+}
 
-.main_footer {
-    color: #fff;
-    font-size: 12px;
+/* Section Headings */
+#resume h3 {
+  font-size: 1.4rem;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.3em;
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+}
+
+/* Paragraphs and Lists */
+#resume p {
+  margin-bottom: 1em;
+}
+
+#resume ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1em;
+  
+  li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 0.5em;
+    
+    &:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #ff6600; /* Accent color */
+    }
+  }
+}
+
+/* Education, Summary, and Technologies Sections */
+.resume-education,
+.resume-summary,
+.resume-technologies {
+  margin-bottom: 1.5em;
+}
+
+/* Skills Section - Two Column Layout */
+.resume-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  
+  .skills-group {
+    flex: 1;
+    min-width: 200px;
+    
+    h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5em;
+      color: #444;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.3em;
+    }
+  }
+}
+
+/* Experience Items */
+.resume-experience {
+  .experience-item {
+    margin-bottom: 1.5em;
+    
+    h4 {
+      margin: 0.2em 0;
+      font-size: 1.3rem;
+      color: #222;
+    }
+    
+    time {
+      font-size: 0.9rem;
+      color: #888;
+    }
+    
+    p {
+      font-size: 0.9rem;
+      color: #666;
+      margin: 0.3em 0;
+    }
+    
+    ul {
+      margin-top: 0.5em;
+      li {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  #resume {
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  .resume-skills {
+    flex-direction: column;
+  }
 }
