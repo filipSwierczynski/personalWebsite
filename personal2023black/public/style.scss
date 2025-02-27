@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+
 // Variables
 $primary-bg: #0d0d0d;
 $secondary-bg: #242222;
@@ -9,10 +11,11 @@ $transition-speed: 0.5s;
 html, body {
   margin: 0;
   padding: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Bricolage Grotesque', sans-serif;
   background: transparent;
   color: $text-color;
-  overflow-x: hidden;
+  overflow: hidden;
+  height: 100%;
 }
 
 // Shared Animated Background Layer
@@ -94,9 +97,29 @@ main {
   flex: 1;
 }
 
+.name_title{
+  h1 {
+    font-size: 2em;
+    font-weight: 200;
+    letter-spacing: 3px;
+    margin-bottom: 0px;
+  }
+  h2 {
+    margin-top: 5px;
+    font-weight: 200;
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+}
+.bio_desc {
+  p {
+    width: 60%;
+  }
+}
+
 // Sections (Home, Projects, Resume, etc.)
 .section_container {
-  padding: 40px;
+  margin: 100px 20%;
   transition: opacity $transition-speed;
   &.hidden {
     display: none;
@@ -106,6 +129,38 @@ main {
     display: block;
     opacity: 1;
   }
+}
+
+#projects {
+  position: relative;
+  padding: 40px 0;
+  scroll-behavior: smooth; // enables native smooth scrolling for anchor links and JS scrollIntoView
+}
+
+.projects-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Scroll Down Button */
+#scrollDown {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.5);
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  color: $text-color;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 1.5em;
+}
+
+#scrollDown:hover {
+  background: rgba(0,0,0,0.8);
 }
 
 // Fixed Footer (Always visible on desktop)

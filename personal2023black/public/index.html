@@ -13,8 +13,8 @@
   <meta name="robots" content="index, follow">
 
   <meta charset="UTF-8">
-<meta name="description" content="Filip Świerczyński - Software Engineer specializing in Angular, RxJS, and real-time data processing for web-based ERP systems. Experienced in innovative feature development and ERP modernization." />
-<meta name="keywords" content="Software Engineer, Angular Developer, RxJS, ERP, Web Developer, Front-End, Wrocław, Poland" />
+<meta name="description" content="Filip Świerczyński - Software Engineer specializing in Angular, RxJS, and real-time data processing for web-based ERP systems. Experienced in developing new features, upgrading legacy systems, and leading projects like Media Analysis software used by MLB and Disney. Skilled in optimizing performance, scalability, and UI responsiveness, with expertise in delivering tailored solutions and integrating APIs for enhanced user experience." />
+<meta name="keywords" content="Software Engineer, Angular Developer, RxJS, ERP, Web Developer, Front-End, Warsaw, Poland" />
 <meta name="author" content="Filip Świerczyński">
 <meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,48 +64,42 @@
           <h1>Filip Swierczynski</h1>
           <h2>Software Engineer</h2>
         </div>
-        <div class="bio_desc"> <p>Hello! I’m a Software Engineer with five of experience creating dynamic, visually engaging, and user-focused web experiences.<br/> Based in Wroclaw, Poland, I work with , Sass, and Angular—bringing designs to life with clean, maintainable code that delights both users and stakeholders.</p> <p>I thrive in agile environments, collaborating with cross-functional teams to make sure every project hits the mark. My attention to detail and commitment to scalability mean the solutions I build are future-proof and ready to grow with your business. Lately, I’ve been expanding my skill set to include backend development in Python and Go, aiming to become a versatile full-stack developer.</p> <p>If you’re looking for someone to help develop impactful web applications or elevate your team’s success, I’d love to connect and explore how we can work together!</p> </div>
+        <div class="bio_desc"> <p>Software Engineer specializing in Angular, RxJS, and real-time data processing for web-based ERP systems. Experienced in developing new features, upgrading legacy systems, and leading projects like Media Analysis software used by MLB and Disney. Skilled in optimizing performance, scalability, and UI responsiveness, with expertise in delivering tailored solutions and integrating APIs for enhanced user experience.</div>
       </section>
       
       <!-- Projects Section -->
-      <section id="projects" class="section_container hidden">
-        <div class="projects_list">
-          <!-- Your project items go here -->
+     <!-- Projects Section -->
+     <section id="projects" class="section_container hidden projects_container">
+        <div class="projects-inner">
+          <!-- Project Item 1 -->
           <div class="project_item">
             <h2>Pokedex</h2>
             <div class="project_images">
-              <img src="https://placehold.co/140x240" alt="Project screenshot">
-              <img src="https://placehold.co/140x240" alt="Project screenshot">
-              <img src="https://placehold.co/140x240" alt="Project screenshot">
+              <img src="https://placehold.co/140x240" alt="Pokedex screenshot 1">
+              <img src="https://placehold.co/140x240" alt="Pokedex screenshot 2">
+              <img src="https://placehold.co/140x240" alt="Pokedex screenshot 3">
             </div>
             <p>A dynamic application that brings the world of Pokemon to life!</p>
             <p><a href="#">Live Demo</a></p>
           </div>
-
+          <!-- Project Item 2 -->
           <div class="project_item">
-            <h2>Pokedex</h2>
+            <h2>Project Two</h2>
             <div class="project_images">
-              <img src="https://placehold.co/140x240" alt="Project screenshot">
-              <img src="https://placehold.co/140x240" alt="Project screenshot">
-              <img src="https://placehold.co/140x240" alt="Project screenshot">
+              <img src="https://placehold.co/140x240" alt="Project Two screenshot 1">
+              <img src="https://placehold.co/140x240" alt="Project Two screenshot 2">
+              <img src="https://placehold.co/140x240" alt="Project Two screenshot 3">
             </div>
-            <p>A dynamic application that brings the world of Pokemon to life!</p>
+            <p>A creative solution that redefines user experience.</p>
             <p><a href="#">Live Demo</a></p>
           </div>
-
-          <div class="project_item">
-            <h2>Pokedex</h2>
-            <div class="project_images">
-              <img src="https://placehold.co/140x240" alt="Project screenshot">
-              <img src="https://placehold.co/140x240" alt="Project screenshot">
-              <img src="https://placehold.co/140x240" alt="Project screenshot">
-            </div>
-            <p>A dynamic application that brings the world of Pokemon to life!</p>
-            <p><a href="#">Live Demo</a></p>
-          </div>
-          <!-- Additional projects -->
+          <!-- Additional project items as needed -->
         </div>
+        <button id="scrollDown" aria-label="Scroll to next project">
+          <i class="fas fa-chevron-down"></i>
+        </button>
       </section>
+  
       
 
       
@@ -124,27 +118,7 @@
       </footer>
   </div>
   
-  <!-- JavaScript for Toggling Content -->
-  <script>
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        // Update active class on navigation
-        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-        this.classList.add('active');
-        
-        // Toggle sections without reloading
-        document.querySelectorAll('.section_container').forEach(section => {
-          section.classList.add('hidden');
-          section.classList.remove('visible');
-        });
-        const targetSection = document.querySelector(this.getAttribute('href'));
-        if (targetSection) {
-          targetSection.classList.remove('hidden');
-          targetSection.classList.add('visible');
-        }
-      });
-    });
-  </script>
+
+  <script type="module" src="./script.js"></script>
 </body>
 </html>

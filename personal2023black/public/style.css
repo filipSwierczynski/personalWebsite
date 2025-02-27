@@ -1,11 +1,13 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap");
 html, body {
   margin: 0;
   padding: 0;
-  font-family: "Lato", sans-serif;
+  font-family: "Bricolage Grotesque", sans-serif;
   background: transparent;
   color: #fff;
-  overflow-x: hidden;
+  overflow: hidden;
+  height: 100%;
 }
 
 .background-layer {
@@ -86,8 +88,25 @@ main {
   flex: 1;
 }
 
+.name_title h1 {
+  font-size: 2em;
+  font-weight: 200;
+  letter-spacing: 3px;
+  margin-bottom: 0px;
+}
+.name_title h2 {
+  margin-top: 5px;
+  font-weight: 200;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.bio_desc p {
+  width: 60%;
+}
+
 .section_container {
-  padding: 40px;
+  margin: 100px 20%;
   transition: opacity 0.5s;
 }
 .section_container.hidden {
@@ -97,6 +116,38 @@ main {
 .section_container.visible {
   display: block;
   opacity: 1;
+}
+
+#projects {
+  position: relative;
+  padding: 40px 0;
+  scroll-behavior: smooth;
+}
+
+.projects-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Scroll Down Button */
+#scrollDown {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 1.5em;
+}
+
+#scrollDown:hover {
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .main_footer {
