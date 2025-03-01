@@ -36,45 +36,47 @@ const projectsSection = document.getElementById('projects');
 const contentContainer = projectsSection.querySelector('.projects-inner');
 
 // Only attach custom scroll on desktop and when Projects section is visible.
-if (window.innerWidth >= 1024) {
-  projectsSection.addEventListener('wheel', (e) => {
-    // Only update scroll if Projects section is visible
-    if (!projectsSection.classList.contains('visible')) return;
-    e.preventDefault(); // prevent native scrolling
+// if (window.innerWidth >= 1024) {
+//   projectsSection.addEventListener('wheel', (e) => {
+//         console.log('scrolled')
+//     // Only update scroll if Projects section is visible
+//     if (!projectsSection.classList.contains('visible')) return;
+//     e.preventDefault(); // prevent native scrolling
 
-    targetScroll += e.deltaY; // accumulate scroll delta
+//     targetScroll += e.deltaY; // accumulate scroll delta
 
-    // Clamp targetScroll between 0 and maximum scrollable distance
-    const maxScroll = contentContainer.scrollHeight - projectsSection.clientHeight;
-    if (targetScroll < 0) targetScroll = 0;
-    if (targetScroll > maxScroll) targetScroll = maxScroll;
-  }, { passive: false });
+//     // Clamp targetScroll between 0 and maximum scrollable distance
+//     const maxScroll = contentContainer.scrollHeight - projectsSection.clientHeight;
+//     if (targetScroll < 0) targetScroll = 0;
+//     if (targetScroll > maxScroll) targetScroll = maxScroll;
+//   }, { passive: false });
 
-  // Optionally, add touch event handling for mobile devices if desired
-  let touchStartY = 0;
-  projectsSection.addEventListener('touchstart', (e) => {
-    if (!projectsSection.classList.contains('visible')) return;
-    touchStartY = e.touches[0].clientY;
-  });
-  projectsSection.addEventListener('touchmove', (e) => {
-    if (!projectsSection.classList.contains('visible')) return;
-    e.preventDefault();
-    const touchY = e.touches[0].clientY;
-    targetScroll += (touchStartY - touchY);
-    touchStartY = touchY;
-    const maxScroll = contentContainer.scrollHeight - projectsSection.clientHeight;
-    if (targetScroll < 0) targetScroll = 0;
-    if (targetScroll > maxScroll) targetScroll = maxScroll;
-  }, { passive: false });
-}
+//   // Optionally, add touch event handling for mobile devices if desired
+//   let touchStartY = 0;
+//   projectsSection.addEventListener('touchstart', (e) => {
+//     if (!projectsSection.classList.contains('visible')) return;
+//     touchStartY = e.touches[0].clientY;
+//   });
+//   projectsSection.addEventListener('touchmove', (e) => {
+//     if (!projectsSection.classList.contains('visible')) return;
+//     e.preventDefault();
+//     const touchY = e.touches[0].clientY;
+//     targetScroll += (touchStartY - touchY);
+//     touchStartY = touchY;
+//     const maxScroll = contentContainer.scrollHeight - projectsSection.clientHeight;
+//     if (targetScroll < 0) targetScroll = 0;
+//     if (targetScroll > maxScroll) targetScroll = maxScroll;
+//   }, { passive: false });
+// }
 
-// Animation loop to smoothly update the scroll position
-function smoothScrollLoop() {
-  currentScroll += (targetScroll - currentScroll) * easeFactor;
-  contentContainer.style.transform = `translateY(-${currentScroll}px)`;
-  requestAnimationFrame(smoothScrollLoop);
-}
-requestAnimationFrame(smoothScrollLoop);
+// // Animation loop to smoothly update the scroll position
+// function smoothScrollLoop() {
+//     console.log('scrolled')
+//   currentScroll += (targetScroll - currentScroll) * easeFactor;
+//   contentContainer.style.transform = `translateY(-${currentScroll}px)`;
+//   requestAnimationFrame(smoothScrollLoop);
+// }
+// requestAnimationFrame(smoothScrollLoop);
 
 
 document.querySelectorAll('.nav-link').forEach(link => {
@@ -95,24 +97,4 @@ document.querySelectorAll('.nav-link').forEach(link => {
         targetSection.classList.add('visible');
       }
     });
-  });
-
-
-  document.getElementById('scrollDown').addEventListener('click', () => {
-    // Find the first project that is not fully in view.
-    // We use .projects-inner children for this example.
-    const projects = Array.from(document.querySelectorAll('#projects .project_item'));
-    const container = document.querySelector('#projects');
-    const containerRect = container.getBoundingClientRect();
-  
-    // Find the next project that is below the container's visible area.
-    const nextProject = projects.find(project => {
-      const rect = project.getBoundingClientRect();
-      return rect.top > containerRect.top + 10; // a small offset to detect visibility
-    });
-  
-    // If a next project exists, scroll it into view.
-    if (nextProject) {
-      nextProject.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
   });

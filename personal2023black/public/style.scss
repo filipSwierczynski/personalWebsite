@@ -14,7 +14,6 @@ html, body {
   font-family: 'Bricolage Grotesque', sans-serif;
   background: transparent;
   color: $text-color;
-  overflow: hidden;
   height: 100%;
 }
 
@@ -133,31 +132,42 @@ main {
 
 #projects {
   position: relative;
-  padding: 40px 0;
-  scroll-behavior: smooth; // enables native smooth scrolling for anchor links and JS scrollIntoView
+  
+   // enables native smooth scrolling for anchor links and JS scrollIntoView
+
+
 }
+
 
 .projects-inner {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  height: 400px;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;}
+    overflow-y: scroll;
 }
 
 /* Scroll Down Button */
-#scrollDown {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0,0,0,0.5);
-  border: none;
-  border-radius: 50%;
-  padding: 10px;
-  color: $text-color;
-  cursor: pointer;
-  transition: background 0.3s;
-  font-size: 1.5em;
-}
+// #scrollDown {
+//   position: absolute;
+//   bottom: 20px;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   background: rgba(0,0,0,0.5);
+//   border: none;
+//   border-radius: 50%;
+//   padding: 10px;
+//   color: $text-color;
+//   cursor: pointer;
+//   transition: background 0.3s;
+//   font-size: 1.5em;
+// }
 
 #scrollDown:hover {
   background: rgba(0,0,0,0.8);
