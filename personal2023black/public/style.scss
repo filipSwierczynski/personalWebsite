@@ -151,6 +151,10 @@ main {
   &::-webkit-scrollbar {
     display: none;}
     overflow-y: scroll;
+    .project_item {
+      display: flex;
+      align-items: center;
+    }
 }
 
 /* Scroll Down Button */

@@ -134,6 +134,10 @@ main {
 .projects-inner::-webkit-scrollbar {
   display: none;
 }
+.projects-inner .project_item {
+  display: flex;
+  align-items: center;
+}
 
 /* Scroll Down Button */
 #scrollDown:hover {
