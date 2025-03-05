@@ -103,6 +103,12 @@ main {
 
 .bio_desc p {
   width: 60%;
+  letter-spacing: 1px;
+}
+@media screen and (max-width: 600px) {
+  .bio_desc p {
+    width: 100%;
+  }
 }
 
 .section_container {
