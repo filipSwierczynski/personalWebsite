@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+  <!-- Placeholder art — replace this file with a real screenshot (keep the same filename) -->
+  <rect width="800" height="600" fill="#141414"/>
+  <rect x="120" y="120" width="240" height="360" fill="#1f1f1f"/>
+  <rect x="400" y="120" width="280" height="170" fill="#262626"/>
+  <rect x="400" y="310" width="280" height="170" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+  <line x1="120" y1="120" x2="680" y2="480" stroke="#3a3a3a" stroke-width="1"/>
+  <text x="400" y="560" fill="#555" font-family="monospace" font-size="16" text-anchor="middle">PROJECT TWO — 800×600</text>
+</svg>
