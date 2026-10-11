@@ -423,6 +423,8 @@ section {
   color: var(--muted);
 }
 
+.site-footer .view-counter #site-views { color: var(--fg); }
+
 /* ------------------------------------------------------------
    Scroll-reveal (elements with .reveal fade in via js/main.js)
    ------------------------------------------------------------ */
@@ -541,6 +543,109 @@ section {
 .detail-body .demo-link:hover {
   background: var(--fg);
   color: var(--bg);
+}
+
+/* ------------------------------------------------------------
+   Resume (CV layout on project detail pages)
+   ------------------------------------------------------------ */
+.resume { max-width: 1100px; }
+
+.resume-summary {
+  max-width: 70ch;
+  font-size: 1.1rem;
+}
+
+.resume-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  margin-top: 3rem;
+}
+
+.resume-sidebar h3,
+.resume-main h3 {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.resume-block { margin-bottom: 2.5rem; }
+.resume-block h3 { margin-bottom: 1rem; }
+.resume-block ul { list-style: none; }
+.resume-block li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.9rem;
+}
+.resume-block p { color: #c9c9c6; }
+
+.resume-skill-group { margin-bottom: 1.25rem; font-size: 0.9rem; }
+.resume-skill-group strong {
+  display: block;
+  color: var(--fg);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.resume-main > h3 {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.resume-job {
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.resume-job:first-of-type { padding-top: 0; }
+.resume-job:last-of-type { border-bottom: none; }
+
+.resume-job-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.resume-job-head h4 {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.resume-date {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.resume-company {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0.25rem 0 1rem;
+}
+
+.resume-job ul { list-style: none; }
+.resume-job li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: #c9c9c6;
+  font-size: 0.95rem;
+}
+.resume-job li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--muted);
+}
+
+@media (max-width: 720px) {
+  .resume-grid { grid-template-columns: 1fr; }
 }
 
 .next-project {

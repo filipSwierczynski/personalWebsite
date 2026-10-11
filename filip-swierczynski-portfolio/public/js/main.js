@@ -139,3 +139,11 @@ if (!reduceMotion && window.matchMedia("(pointer: fine)").matches) {
   window.addEventListener("mousedown", () => document.body.classList.add("cursor-down"));
   window.addEventListener("mouseup", () => document.body.classList.remove("cursor-down"));
 }
+
+ async function loadViews(){
+      const response = await fetch("https://i7kl2ujwiauxwzpaqwqw55zgnm0qfpng.lambda-url.eu-central-1.on.aws/");
+      const data = await response.json();
+      console.log(data);
+      document.getElementById("site-views").textContent = data.views;
+    }
+    loadViews();
