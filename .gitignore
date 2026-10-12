@@ -1,4 +1,4 @@
 personal2023black/public/.DS_Store
-./terraform
+**/.terraform/
 *.tfstate
 *.tfstate.backup
