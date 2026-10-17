@@ -6,6 +6,9 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 6.0"
     }
+    archive = {
+      source = "hashicorp/archive"
+    }
   }
   backend "s3" {
     bucket       = "filipsw-tfstate"
