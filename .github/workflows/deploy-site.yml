@@ -2,7 +2,7 @@ name: Deploy site
 
 on:
   push:
-    branches: [main]
+    branches: [master]
     paths:
       - "filip-swierczynski-portfolio/public/**"
   workflow_dispatch:
