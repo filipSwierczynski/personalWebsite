@@ -24,7 +24,7 @@ resource "aws_lambda_function_url" "lambda_url" {
   authorization_type = "NONE"
 
   cors {
-    allow_origins = ["*"]
+    allow_origins = ["https://filipsw.com", "https://www.filipsw.com", "http://127.0.0.1:5501"]
   }
 }
 
@@ -44,6 +44,13 @@ resource "aws_lambda_permission" "lambda_perm" {
   function_name          = aws_lambda_function.lambda.function_name
   principal              = "*"
   function_url_auth_type = "NONE"
+}
+
+
+
+resource "aws_cloudwatch_log_group" "logs" {
+  name              = "/aws/lambda/cloudresume-test-api"
+  retention_in_days = 30
 }
 
 

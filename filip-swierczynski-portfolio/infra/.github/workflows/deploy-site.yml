@@ -1,0 +1,28 @@
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "filip-swierczynski-portfolio/public/**"
+  workflow_dispatch:
+
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: aws-actions/configure-aws-credentials@v6.2.4
+        with:
+          role-to-assume: "arn:aws:iam::070500515115:role/github-actions-deploy"
+          aws-region: "eu-central-1"
+      - name: "Sync site to S3"
+        run: "aws s3 sync filip-swierczynski-portfolio/public s3://filipsw-site/public --delete"
+      - name: "Invalidate CloudFront"
+        run: 'aws cloudfront create-invalidation --distribution-id EFBCJAOHRC928 --paths "/*"'
+

@@ -29,7 +29,7 @@ resource "aws_s3_bucket_policy" "site" {
         Resource  = "arn:aws:s3:::filipsw-site/*"
         Condition = {
           StringEquals = {
-            "AWS:SourceArn" = "arn:aws:cloudfront::070500515115:distribution/EFBCJAOHRC928"
+            "AWS:SourceArn" = aws_cloudfront_distribution.cloudresume_distribution.arn
           }
         }
       }
