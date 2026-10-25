@@ -4,17 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Google Analytics (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QTNE25RWNR"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag("js", new Date());
-    gtag("config", "G-QTNE25RWNR");
-  </script>
-
-  <title>Filip Swierczynski — Software Engineer</title>
-  <meta name="description" content="Software engineer with 5+ years of experience building user-facing products, now moving into cloud infrastructure. JavaScript/TypeScript, AWS, real-time data processing, API integrations." />
+  <title>Filip Świerczyński — Software Engineer · Angular &amp; AWS</title>
+  <meta name="description" content="Software engineer. Angular on the front end, AWS underneath." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://filipsw.com/" />
+  <meta property="og:title" content="Filip Świerczyński — Software Engineer · Angular &amp; AWS" />
+  <meta property="og:description" content="Software engineer. Angular on the front end, AWS underneath." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -32,6 +27,7 @@
     <nav class="site-nav">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
+      <a href="projects/project-one.html#resume">Resume</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -40,11 +36,10 @@
   <section class="hero" id="top">
     <h1>
       <span class="row"><span>Filip</span></span>
-      <span class="row"><span>Swierczynski</span></span>
+      <span class="row"><span>Świerczyński</span></span>
     </h1>
     <div class="hero-meta">
-      <p>Software engineer moving into cloud infrastructure, building user-facing products with care for detail and experience.</p>
-      <span class="scroll-hint">Scroll ↓</span>
+<p>Software engineer specializing in Angular frontends and AWS cloud infrastructure.</p>      <span class="scroll-hint">Scroll ↓</span>
     </div>
   </section>
 
@@ -52,36 +47,37 @@
   <section class="about" id="about">
     <div class="section-label"><span>01</span><span>About</span></div>
 
-    <p class="statement reveal">
-      Software engineer with <span class="dim">5+ years of experience</span> working in
-      large, well-maintained codebases and building user-facing products —
-      now pivoting into <span class="dim">cloud infrastructure</span>, with a focus on
-      <span class="dim">communication, attention to detail,</span> and user experience.
-    </p>
+ <p class="statement reveal">
+  I've spent <span class="dim">5+ years</span> building production applications in
+  <span class="dim">Angular and TypeScript</span>, ranging from complex MES/ERP systems to real-time telemetry dashboards.
+  Now, as an <span class="dim">AWS Certified Solutions Architect</span>, I also design the infrastructure behind them using
+  <span class="dim">Terraform</span> and CI/CD. I thrive on the work that keeps products healthy: executing large framework upgrades,
+  untangling release pipelines, and building reliable, automated deployments.
+</p>
 
     <div class="about-grid reveal">
       <div>
-        <h3>Core</h3>
+        <h3>Frontend</h3>
         <ul>
-          <li>JavaScript / TypeScript</li>
-          <li>Angular</li>
-          <li>Node.js</li>
+          <li>Angular (Signals, RxJS)</li>
+          <li>Nx Monorepos & Architecture</li>
+          <li>Large framework upgrades</li>
         </ul>
       </div>
       <div>
-        <h3>Focus</h3>
+        <h3>Cloud</h3>
         <ul>
-          <li>Real-time data processing</li>
-          <li>API integrations</li>
-          <li>User experience</li>
+          <li>AWS (Certified Solutions Architect)</li>
+          <li>Terraform / Infrastructure as Code</li>
+          <li>CI/CD & Docker</li>
         </ul>
       </div>
       <div>
         <h3>Currently</h3>
         <ul>
-          <li>Open to opportunities</li>
-          <li>Based in Poland</li>
-          <li>Working remotely</li>
+          <li>Open to senior roles</li>
+          <li>Wrocław, Poland</li>
+          <li>Hybrid or remote</li>
         </ul>
       </div>
     </div>
@@ -89,22 +85,22 @@
 
   <!-- ============ PROJECTS ============ -->
   <section class="projects" id="projects">
-    <div class="section-label"><span>02</span><span>Selected Projects</span></div>
+    <div class="section-label"><span>02</span><span>Projects</span></div>
 
     <!-- Project 1 — duplicate this <a> block to add more projects -->
     <a class="project reveal" href="projects/project-one.html">
-      <div class="project-media">
-        <img src="assets/project-1.svg" alt="Cloud Resume Challenge preview" />
+      <div class="project-media cloud-architecture">
+        <img src="assets/architecture.drawio.png" alt="Architecture diagram: Route 53, CloudFront and S3 serving the site, with a Lambda and DynamoDB visitor counter and a GitHub Actions deploy pipeline" />
       </div>
       <div class="project-info">
         <span class="index">01</span>
         <h3>Cloud Resume Challenge</h3>
-        <p>This site, migrated from Firebase to AWS with zero downtime. Static files on a private S3 bucket behind CloudFront, HTTPS via ACM, DNS on Route 53, and a serverless visitor counter on Lambda + DynamoDB.</p>
+        <p>This site, migrated from Firebase to AWS with zero downtime. Static files on a private S3 bucket behind CloudFront, HTTPS via ACM, DNS on Route 53, and a serverless visitor counter on Lambda + DynamoDB. Infrastructure in Terraform, deployed by GitHub Actions through OIDC.</p>
         <div class="tags">
           <span>AWS</span>
-          <span>CloudFront</span>
+          <span>Terraform</span>
+          <span>GitHub Actions</span>
           <span>Lambda</span>
-          <span>DynamoDB</span>
         </div>
         <span class="view">View project <span class="arrow">→</span></span>
       </div>
@@ -120,14 +116,14 @@
     <div class="contact-links reveal">
       <a href="mailto:filipsdev@gmail.com">filipsdev@gmail.com</a>
       <a href="https://www.linkedin.com/in/filip-swierczynski-a78151115/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="assets/Filip_Swierczynski_CV.pdf" target="_blank" rel="noopener">Resume / CV</a>
+      <a href="https://github.com/filipSwierczynski" target="_blank" rel="noopener">GitHub</a>
+      <a href="assets/Filip_Swierczynski_CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
     </div>
   </section>
 
   <footer class="site-footer">
-    <span>© 2026 Filip Swierczynski</span>
+    <span>© 2026 Filip Świerczyński</span>
     <span class="view-counter">Site views: <span id="site-views"></span></span>
-    <span>Software Engineer</span>
   </footer>
 
   <script src="js/main.js"></script>

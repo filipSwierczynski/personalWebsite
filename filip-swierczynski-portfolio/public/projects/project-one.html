@@ -4,10 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-
-
   <title>Cloud Resume Challenge — Filip Swierczynski</title>
-  <meta name="description" content="Case study: migrating this site from Firebase to AWS with zero downtime — S3, CloudFront, Route 53, ACM, and a Lambda + DynamoDB visitor counter." />
+  <meta name="description" content="Case study: migrating this site from Firebase to AWS with zero downtime — S3, CloudFront, Route 53, ACM, a Lambda + DynamoDB visitor counter, Terraform and GitHub Actions." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -23,6 +21,7 @@
     <nav class="site-nav">
       <a href="../index.html#about">About</a>
       <a href="../index.html#projects">Projects</a>
+      <a href="#resume">Resume</a>
       <a href="../index.html#contact">Contact</a>
     </nav>
   </header>
@@ -41,15 +40,13 @@
       </div>
       <div>
         <h3>Stack</h3>
-        <p>AWS: S3, CloudFront, Route 53, ACM, Lambda, DynamoDB</p>
+        <p>AWS: S3, CloudFront, Route 53, ACM, Lambda, DynamoDB · Terraform · GitHub Actions</p>
       </div>
     </div>
   </section>
 
-  <div class="detail-media">
-    <!-- TODO: architecture diagram — browser → Route 53 → CloudFront → S3,
-         plus the counter path to Lambda → DynamoDB -->
-    <img src="../assets/project-1.svg" alt="Cloud Resume Challenge architecture diagram" />
+  <div class="detail-media cloud-architecture">
+    <img src="../assets/architecture.drawio.png" alt="Architecture diagram: Route 53, CloudFront and S3 serving the site, with a Lambda and DynamoDB visitor counter and a GitHub Actions deploy pipeline" />
   </div>
 
   <section class="detail-body">
@@ -83,20 +80,24 @@
     </p>
     <h2>Infrastructure as code &amp; CI/CD</h2>
     <p>
-      The entire stack — S3 bucket, CloudFront distribution, ACM certificate, Route 53
-      records, Lambda function and DynamoDB table — is defined in Terraform. Every push to
-      the main branch runs a GitHub Actions pipeline that syncs the site to S3, invalidates
-      the CloudFront cache and deploys the Lambda, authenticating to AWS through OIDC
-      rather than stored access keys.
+      The S3 bucket, CloudFront distribution, ACM certificate, Lambda function and IAM
+      roles are defined in Terraform. I built them by hand first, then imported them into
+      Terraform with remote state in S3, so nothing was rebuilt and the site never went down.
+      Every push to <code>master</code> that changes the site runs a GitHub Actions pipeline
+      that syncs the files to S3 and invalidates the CloudFront cache. It authenticates to
+      AWS through OIDC with a least-privilege role scoped to this repository and branch, so
+      no access keys are stored anywhere.
     </p>
   </section>
 
-  <section class="detail-body resume">
+  <section class="detail-body resume" id="resume">
     <h2>Resume</h2>
     <p class="resume-summary">
-      Software engineer with 5+ years of experience (TypeScript, Node.js, Angular) moving into
-      cloud engineering. I build and deploy on AWS with Terraform and CI/CD, and work across
-      frontend, .NET APIs and Azure DevOps pipelines in production.
+      Software engineer with 5+ years building production Angular and TypeScript applications
+      for enterprise clients including Disney, BlackRock and Shopify. AWS Certified Solutions
+      Architect who also builds and runs the infrastructure behind the frontend, with Terraform
+      and CI/CD. Owns features end to end, from reactive UIs (RxJS, Signals) in Nx monorepos to
+      .NET APIs and release pipelines, and mentors other engineers.
     </p>
 
     <div class="resume-grid">
@@ -118,10 +119,10 @@
 
         <div class="resume-block">
           <h3>Skills</h3>
-          <p class="resume-skill-group"><strong>Cloud &amp; DevOps</strong><br>AWS (S3, CloudFront, Route 53, ACM, Lambda, DynamoDB, IAM), Terraform, GitHub Actions, Azure DevOps Pipelines, Docker, Kubernetes (AKS, kubectl)</p>
-          <p class="resume-skill-group"><strong>Backend</strong><br>Node.js, TypeScript, C#/.NET (working knowledge), REST, GraphQL</p>
-          <p class="resume-skill-group"><strong>Frontend</strong><br>Angular (14–21), RxJS, Signals, Vue 3, React</p>
-          <p class="resume-skill-group"><strong>Practices</strong><br>CI/CD, dependency security, Agile/Scrum, code review</p>
+          <p class="resume-skill-group"><strong>Frontend</strong><br>Angular (16–21), TypeScript, RxJS, Signals, Nx, WCAG accessibility, Vue 3, React</p>
+          <p class="resume-skill-group"><strong>Cloud &amp; DevOps</strong><br>AWS (S3, CloudFront, Route 53, ACM, Lambda, DynamoDB, IAM), Terraform, GitHub Actions, Azure DevOps Pipelines, Kubernetes (AKS, kubectl)</p>
+          <p class="resume-skill-group"><strong>Backend</strong><br>Node.js, C#/.NET (working knowledge), REST, GraphQL</p>
+          <p class="resume-skill-group"><strong>Practices</strong><br>CI/CD, Jest, Agile/Scrum, code review, dependency security</p>
         </div>
 
         <div class="resume-block">
@@ -152,11 +153,11 @@
           </div>
           <p class="resume-company">Aptean · Wrocław, Poland</p>
           <ul>
-            <li>Coordinate versioned releases of 4 interdependent projects on Azure DevOps: version bumps, git tags, pipeline runs and dependency-ordered deploys.</li>
-            <li>Fixed a deployment issue where Keycloak kept running a stale image by adding a pipeline stage that restarts its pods on AKS (Azure Kubernetes Service) after each build.</li>
-            <li>Own remediation of <code>npm audit</code> failures in CI: investigate advisories and apply upgrades to keep pipelines unblocked without breaking builds.</li>
-            <li>Upgraded an Nx monorepo from Angular 14/16 to 21, combining Nx migrations with manual refactoring of 20+ files.</li>
-            <li>Extend .NET (C#) REST APIs and build the matching Angular features for MES/ERP software: entity catalogues, hierarchical trees, audit questionnaires and rating systems.</li>
+            <li>Upgraded the team's Nx monorepo from Angular 16 to 21 (Nx migrations plus manual refactoring of 20+ files), moving the product onto a supported version with Signals and standalone components.</li>
+            <li>Deliver MES/ERP features end to end (entity catalogues, hierarchical trees, audit questionnaires, rating systems): from Figma designs and RxJS/Signals state to the .NET (C#) REST endpoints behind them, covered by Jest unit tests.</li>
+            <li>Mentored 3 engineers and review pull requests; wrote technical documentation and lint scripts that enforce code standards in the staging pipeline.</li>
+            <li>Own dependency security for the monorepo: triage <code>npm audit</code> advisories and ship verified upgrades so CI stays unblocked without regressions.</li>
+            <li>Coordinate releases of 4 interdependent projects on Azure DevOps (version bumps, git tags, dependency-ordered pipeline runs); diagnosed a stale-image issue on Kubernetes (AKS) and fixed it with a pipeline stage that restarts the Keycloak pods after each build.</li>
           </ul>
         </article>
 
@@ -168,8 +169,8 @@
           <p class="resume-company">Providius · Ontario, Canada (remote)</p>
           <ul>
             <li>Built a real-time telemetry dashboard for Disney operations using WebSockets and RxJS, rendering hundreds of live data points with &lt;3s anomaly detection.</li>
-            <li>Wrote runbooks and onboarding documentation that reduced new-hire ramp-up time by 30%.</li>
             <li>Built a reusable component library meeting WCAG 2.1 AA accessibility standards.</li>
+            <li>Wrote runbooks and onboarding documentation that reduced new-hire ramp-up time by 30%.</li>
           </ul>
         </article>
 
@@ -187,13 +188,13 @@
       </div>
     </div>
 
-    <a class="demo-link" href="https://github.com/TODO" target="_blank" rel="noopener">GitHub repo ↗</a>
+    <a class="demo-link" href="../assets/Filip_Swierczynski_CV.pdf" download>Download PDF ↓</a>
+    <a class="demo-link" href="https://github.com/filipSwierczynski/personalWebsite" target="_blank" rel="noopener">GitHub repo ↗</a>
   </section>
 
-<footer class="site-footer">
-    <span>© 2026 Filip Swierczynski</span>
+  <footer class="site-footer">
+    <span>© 2026 Filip Świerczyński</span>
     <span class="view-counter">Site views: <span id="site-views"></span></span>
-    <span>Software Engineer</span>
   </footer>
 
   <script src="../js/main.js"></script>
